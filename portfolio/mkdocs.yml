@@ -1,0 +1,31 @@
+# Project information
+site_name: 'IA Portfolio'
+site_description: 'Estudos de inteligência artificial.'
+site_author: 'Filipe Machado'
+
+# Repository
+repo_name: 'fmaachadoo/artificial-intelligence-study-portfolio'
+repo_url: 'https://github.com/fmaachadoo/artificial-intelligence-study-portfolio'
+
+# Configuration
+nav:
+  - Início: 'index.md'
+
+# Theme
+theme:
+  name: 'material'
+  language: 'pt-br'
+  palette:
+    scheme: slate
+
+# Extra theme customization
+extra:
+  theme:
+    features:
+      - 'navigation.tabs'
+      - 'navigation.tabs.sticky'
+      - 'dark_mode'
+
+# Plugins (Optional)
+plugins:
+  - search

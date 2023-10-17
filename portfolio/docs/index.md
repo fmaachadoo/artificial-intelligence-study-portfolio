@@ -17,5 +17,5 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
 
 * [O que é Inteligência Artificial?](intro.md)
 * [História da Inteligência Artificial](history.md)
-* c
+* [Estado da Arte](state-of-the-art.md)
 * d

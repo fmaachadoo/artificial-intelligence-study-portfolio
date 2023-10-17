@@ -129,6 +129,41 @@ um grande volume e uma grande variedade de dados para treinar algoritmos.
 
 #### 2010 - Deep Learning
 
+Deep Learning é uma sub-área do campo da inteligência artificial que surgiu
+em meados de 2010. Essa área da inteligência artificial alavancou os estudos
+sobre reconhecimento de imagens, processamento de linguagem natura, 
+reconhecimento de voz e muitas outras áreas.
+
+
+## Opinião sobre a história da IA
+
+> Na minha opinião, não há muito o que se adicionar sobre fatos históricos que 
+> ocorreram há muito tempo pois é o que é. Porém, é interessante notar que
+> a inteligência artificial é um assunto que já existe há muito tempo e que
+> está em constante evolução.
+>
+> Essa evolução da IA vale a pena não só o 
+> conhecimento e o aprendizado, mas também vale a discussão de como isso pode 
+> afetar o futuro visto que estamos em um período próximo ao que se pode considerar
+> como uma revolução das inteligências artificiais, onde temos novos modelos de
+> algoritmos capazes de realizar uma gama enorme funções que humanos levam
+> anos para aprender e horas ou dias para colocar uma atividade em prática.
+
+</br>
+
+> Um dos assuntos que me chama atenção é sobre o CAPTCHA, e a preocupação da
+> geração de novas formas de CAPTCHA, visto que hoje em dia a inteligência
+> artificial [avançou a ponto de ser capaz de resolver CAPTCHAs com uma taxa de
+> acerto melhor que humanos](https://qz.com/ai-bots-recaptcha-turing-test-websites-authenticity-1850734350).
+>
+> Outro ponto sobre a relação de CAPTCHA com inteligência artificial é que
+> hoje em dia, os [serviços de CAPTCHA hoje em dia se utilizam de inteligência
+> artificial para gerar captchas e aprimorar modelos de reconhecimento de imagens](https://www.google.com/recaptcha/intro/?zbcode=inc5000#:~:text=Every%20time%20our%20CAPTCHAs%20are%20solved%2C%20that%20human%20effort%20helps%20digitize%20text%2C%20annotate%20images%2C%20and%20build%20machine%20learning%20datasets.%20This%20in%20turn%20helps%20preserve%20books%2C%20improve%20maps%2C%20and%20solve%20hard%20AI%20problems.).
+>
+>
+> #####[How Google Trains AI with Your Help through CAPTCHA](https://medium.com/@yennhi95zz/how-google-trains-ai-with-your-help-through-captcha-876cb4eb4d01)
+>  
+
 ### Estado da arte
 
 ### Agentes e ambientes

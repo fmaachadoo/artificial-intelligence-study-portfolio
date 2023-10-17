@@ -148,19 +148,3 @@ reconhecimento de voz e muitas outras áreas.
 >
 #####[How Google Trains AI with Your Help through CAPTCHA](https://medium.com/@yennhi95zz/how-google-trains-ai-with-your-help-through-captcha-876cb4eb4d01)
 
-
-### Estado da arte
-
-### Agentes e ambientes
-
-### Racionalidade
-
-### Especificando o ambiente de tarefas
-
-### Arquitetura do Agente
-
-### Tipos de Agente
-
-### Representação de Estados
-
-

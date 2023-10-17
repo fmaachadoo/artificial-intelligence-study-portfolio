@@ -12,6 +12,7 @@ nav:
   - Início: 'index.md'
   - Introdução: 'intro.md'
   - História: 'history.md'
+  - Estado da Arte: 'state-of-the-art.md'
 
 # Theme
 theme:

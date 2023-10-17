@@ -127,7 +127,7 @@ A Big Data é de suma importância para treinamento de inteligência artificiais
 hoje em dia, visto que hoje em dia é possível utilizar esses dados que possuem
 um grande volume e uma grande variedade de dados para treinar algoritmos.
 
-#### 2010 - Deep Learning
+### 2010 - Deep Learning
 
 Deep Learning é uma sub-área do campo da inteligência artificial que surgiu
 em meados de 2010. Essa área da inteligência artificial alavancou os estudos

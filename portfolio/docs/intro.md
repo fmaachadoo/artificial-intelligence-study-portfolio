@@ -18,7 +18,7 @@ na computação.
 
 ## História
 
-#### 1950 - Alan Turing e John McCarthy
+### 1950 - Alan Turing e John McCarthy
 
 Alan Turing é considerado o pai da ciência da computação, e por ser um dos
 primeiros a considerar a inteligência artificial como um assunto de computação
@@ -43,7 +43,7 @@ que fosse capaz de realizar tarefas que normalmente era realizado por seres
 humanos e exigia processos mentais de alto nível, onde há relação de 
 aprendizado, memória e raciocínio crítico trabalhando em conjunto.
 
-#### 1950+ - Matemática e Xadrêz
+### 1950+ - Matemática e Xadrêz
 
 Em 1951, foi criado uma [calculadora (SNARC)](https://zahid-parvez.medium.com/history-of-ai-the-first-neural-network-computer-marvin-minsky-231c8bd58409) que era implementada usando um mecanismo
 similar a uma rede neural, essa calculadora se utilizava de um processo de
@@ -59,13 +59,13 @@ conhecido como Los Alamos Chess](https://discover.lanl.gov/publications/at-the-b
 Devido à limitações de poder computacional, os estudos de inteligência 
 artificial tiveram uma pequena pausa nesse período.
 
-#### 1970 - Inverno da IA
+### 1970 - Inverno da IA
 
 Tivemos outro período de pausa da inteligência artificial que ocorreu entre os anos 70 e o começo dos anos 80. Esse período ficou conhecido como "Inverno da IA". Onde não
 existia muita novidade sobre o assunto e houveram muitos cortes nos investimentos
 da área.
 
-#### 1980+ - Comercial
+### 1980+ - Comercial
 
 Em 1980, devido à evolução do poder computacional, a inteligência artificial
 voltou a ser um assunto de estudo e, nesse período, a inteligência artificial
@@ -77,7 +77,14 @@ análise de risco de crédico bancário, gerênciamento de riscos e até algorit
 de otimização de desempenho em negociação de ações financeiras.
 
 
-#### 1990 - Internet
+### 1990 - Internet, muitos dados e aplicações famosas
+
+- #### Internet
+
+    Em 1990, a internet começou a se popularizar e com isso, a quantidade de
+    dados disponíveis para serem processados aumentou exponencialmente. 
+    Com isso, a inteligência artificial começou a ser utilizada para processar
+    esses dados e extrair informações úteis para os usuários e dos usuários.
 
 - #### Guerra do Golfo
 
@@ -100,3 +107,40 @@ de otimização de desempenho em negociação de ações financeiras.
     Deep Blue foi um programa de computador desenvolvido pela IBM que foi capaz de
     vencer o campeão mundial de xadrêz, Garry Kasparov, em 1997. 
     Esse foi um marco histórico para a inteligência artificial, pois foi a primeira vez que um programa de computador venceu um campeão mundial de xadrêz.
+
+### 2000 - Big Data
+
+Com o aumento da quantidade de dados disponíveis, a inteligência artificial
+começou a ser utilizada para processar esses dados e extrair informações úteis
+para os usuários e dos usuários. Tradicionalmente, os dados eram armazenados e
+processados usando SGBDs (Sistemas Gerenciadores de Banco de Dados) e processados
+usando SQL (Structured Query Language).
+
+O volume de dados começou a ser tão grande que o armazenamento e poder de
+processamento das empresas (utilizando SGBDs) não era mais suficiente para 
+processar esses dados.
+Com isso, começou a surgir a ideia de armazenar
+esses dados em nuvem e utilizar o poder de processamento de outras empresas.
+Este conceito é conhecido como "Big Data".
+
+A Big Data é de suma importância para treinamento de inteligência artificiais
+hoje em dia, visto que hoje em dia é possível utilizar esses dados que possuem
+um grande volume e uma grande variedade de dados para treinar algoritmos.
+
+#### 2010 - Deep Learning
+
+### Estado da arte
+
+### Agentes e ambientes
+
+### Racionalidade
+
+### Especificando o ambiente de tarefas
+
+### Arquitetura do Agente
+
+### Tipos de Agente
+
+### Representação de Estados
+
+

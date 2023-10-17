@@ -146,5 +146,6 @@ reconhecimento de voz e muitas outras áreas.
 > artificial para gerar captchas e aprimorar modelos de reconhecimento de imagens](https://www.google.com/recaptcha/intro/?zbcode=inc5000#:~:text=Every%20time%20our%20CAPTCHAs%20are%20solved%2C%20that%20human%20effort%20helps%20digitize%20text%2C%20annotate%20images%2C%20and%20build%20machine%20learning%20datasets.%20This%20in%20turn%20helps%20preserve%20books%2C%20improve%20maps%2C%20and%20solve%20hard%20AI%20problems.).
 >
 >
-#####[How Google Trains AI with Your Help through CAPTCHA](https://medium.com/@yennhi95zz/how-google-trains-ai-with-your-help-through-captcha-876cb4eb4d01)
+
+####Veja: [**How Google Trains AI with Your Help through CAPTCHA**](https://medium.com/@yennhi95zz/how-google-trains-ai-with-your-help-through-captcha-876cb4eb4d01)
 

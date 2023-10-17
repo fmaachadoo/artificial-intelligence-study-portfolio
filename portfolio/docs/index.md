@@ -16,6 +16,6 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
 ## Tópicos
 
 * [O que é Inteligência Artificial?](intro.md)
-* b
+* [História da Inteligência Artificial](history.md)
 * c
 * d

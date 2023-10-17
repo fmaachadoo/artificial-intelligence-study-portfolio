@@ -13,6 +13,7 @@ nav:
   - Introdução: 'intro.md'
   - História: 'history.md'
   - Estado da Arte: 'state-of-the-art.md'
+  - Agentes: 'agent.md'
 
 # Theme
 theme:
@@ -32,3 +33,10 @@ extra:
 # Plugins (Optional)
 plugins:
   - search
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

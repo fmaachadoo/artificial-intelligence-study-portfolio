@@ -10,6 +10,7 @@ repo_url: 'https://github.com/fmaachadoo/artificial-intelligence-study-portfolio
 # Configuration
 nav:
   - Início: 'index.md'
+  - Introdução: 'intro.md'
 
 # Theme
 theme:

@@ -15,7 +15,16 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
 
 ## Tópicos
 
-* [O que é Inteligência Artificial?](intro.md)
-* [História da Inteligência Artificial](history.md)
-* [Estado da Arte](state-of-the-art.md)
-* [Agentes](agent.md)
+- Entrega 1
+    * [O que é Inteligência Artificial?](intro.md)
+    * [História da Inteligência Artificial](history.md)
+    * [Estado da Arte](state-of-the-art.md)
+    * [Agentes](agent.md)
+- Entrega 2 (Resolvendo problemas por Busca)
+    * Agentes de Soluções de Problemas
+    * Algoritmos de Busca
+    * Funções Heurísticas
+    * Busca em ambientes complexos
+    * Algoritmos genéticos
+    * Discussões
+    * Projetos e problemas

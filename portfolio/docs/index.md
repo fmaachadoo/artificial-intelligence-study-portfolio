@@ -20,11 +20,11 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [História da Inteligência Artificial](history.md)
     * [Estado da Arte](state-of-the-art.md)
     * [Agentes](agent.md)
-- Entrega 2 (Resolvendo problemas por Busca)
+- Entrega 2 (**Resolvendo problemas por Busca**)
     * [Agentes de Soluções de Problemas](problem_solving_agents.md)
     * [Algoritmos de Busca](search_algorithms.md)
     * [Funções Heurísticas](heuristics.md)
-    * Busca em ambientes complexos
+    * [Busca em ambientes complexos](complex_environments.md)
     * Algoritmos genéticos
     * Discussões
     * Projetos e problemas

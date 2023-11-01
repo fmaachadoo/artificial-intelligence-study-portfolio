@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../search_algorithms/">
+      
+      
+        <link rel="next" href="../complex_environments/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Heuristics - IA Portfolio</title>
+        <title>Funções Heurísticas - IA Portfolio</title>
       
     
     
@@ -107,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Heuristics
+              Funções Heurísticas
             
           </span>
         </div>
@@ -303,6 +307,285 @@
   
   <span class="md-ellipsis">
     Agentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem_solving_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentes de Soluções de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de Busca
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Funções Heurísticas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Funções Heurísticas
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-sao-funcoes-heuristicas" class="md-nav__link">
+    O que são Funções Heurísticas?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importancia" class="md-nav__link">
+    Importância
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-simples" class="md-nav__link">
+    Exemplos Simples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-sao-utilizadas" class="md-nav__link">
+    Como são Utilizadas?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes" class="md-nav__link">
+    Limitações
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo" class="md-nav__link">
+    Resumo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribuindo-para-o-assunto-de-heuristicas" class="md-nav__link">
+    Contribuindo para o assunto de heurísticas
+  </a>
+  
+    <nav class="md-nav" aria-label="Contribuindo para o assunto de heurísticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distancia-de-manhattan" class="md-nav__link">
+    Distância de Manhattan
+  </a>
+  
+    <nav class="md-nav" aria-label="Distância de Manhattan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-distancia-de-manhattan" class="md-nav__link">
+    O que é Distância de Manhattan?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-e-utilizada-como-heuristica" class="md-nav__link">
+    Como é Utilizada como Heurística?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens" class="md-nav__link">
+    Vantagens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitacoes_1" class="md-nav__link">
+    Limitações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-um-problema-de-caminho-mais-curto" class="md-nav__link">
+    Exemplo em um Problema de Caminho Mais Curto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografia
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complex_environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Busca em ambientes complexos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../genetic_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos genéticos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_discussions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussões (Porfolio 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projetos e problemas (Porfolio 2)
   </span>
   
 

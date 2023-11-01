@@ -21,7 +21,7 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Estado da Arte](state-of-the-art.md)
     * [Agentes](agent.md)
 - Entrega 2 (Resolvendo problemas por Busca)
-    * Agentes de Soluções de Problemas
+    * [Agentes de Soluções de Problemas](problem_solving_agents.md)
     * Algoritmos de Busca
     * Funções Heurísticas
     * Busca em ambientes complexos

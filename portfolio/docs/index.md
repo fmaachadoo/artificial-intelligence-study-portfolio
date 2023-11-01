@@ -22,7 +22,7 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Agentes](agent.md)
 - Entrega 2 (Resolvendo problemas por Busca)
     * [Agentes de Soluções de Problemas](problem_solving_agents.md)
-    * Algoritmos de Busca
+    * [Algoritmos de Busca](search_algorithms.md)
     * Funções Heurísticas
     * Busca em ambientes complexos
     * Algoritmos genéticos

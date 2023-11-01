@@ -14,6 +14,13 @@ nav:
   - História: 'history.md'
   - Estado da Arte: 'state-of-the-art.md'
   - Agentes: 'agent.md'
+  - Agentes de Soluções de Problemas: 'problem_solving_agents.md'
+  - Algoritmos de Busca: 'search_algorithms.md'
+  - Funções Heurísticas: 'heuristics.md'
+  - Busca em ambientes complexos: 'complex_environments.md'
+  - Algoritmos genéticos: 'genetic_algorithms.md'
+  - Discussões (Porfolio 2): 'portfolio_2_discussions.md'
+  - Projetos e problemas (Porfolio 2): 'portfolio_2_projects.md'
 
 # Theme
 theme:

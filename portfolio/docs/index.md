@@ -1,5 +1,9 @@
 # Inteligência Artificial
 
+    Aluno: Filipe Santana Machado
+
+    Matrícula: 180016563
+
 ## 🔎 Sobre o portfolio
 
     Este projeto é um estudo sobre os assuntos de inteligência artificial,

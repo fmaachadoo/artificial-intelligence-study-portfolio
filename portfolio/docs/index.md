@@ -25,6 +25,6 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Algoritmos de Busca](search_algorithms.md)
     * [Funções Heurísticas](heuristics.md)
     * [Busca em ambientes complexos](complex_environments.md)
-    * Algoritmos genéticos
+    * [Algoritmos genéticos](genetic_algorithms.md)
     * Discussões
     * Projetos e problemas

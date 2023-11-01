@@ -27,4 +27,4 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Busca em ambientes complexos](complex_environments.md)
     * [Algoritmos genéticos](genetic_algorithms.md)
     * [Discussões](portfolio_2_discussions.md)
-    * Projetos e problemas
+    * [Projetos e problemas](portfolio_2_projects.md)

@@ -40,7 +40,48 @@ soluções mais eficientes e eficazes para problemas complexos.
 
 # Representação Atômica vs Fatorada
 
+A representação atômica de um estado é similar a uma representação de caixa 
+preta, ou seja, não temos informações sobre suas propriedades e componentes
+internos. Quando temos uma representação mais complexa e expressiva, temos
+uma representação fatorada, onde temos acesso aos atributos de um estado.
+
+```mermaid
+graph TD
+    subgraph "Representação Atômica"
+        A[Estado atômico A] --> B[Estado Atômico B] --> C[Estado Atômico C]
+    end
+
+    
+    subgraph "Representação Fatorada"
+        subgraph Estado_A
+            F[Estado fatorado A]
+            F -->|Detalhe 1| J[Propriedade 1]
+            F -->|Detalhe 2| K[Propriedade 2]
+            F -->|Detalhe 3| I[Propriedade 3]
+        end
+    
+        subgraph Estado_B
+            X[Estado fatorado A]
+            X -->|Detalhe 1| Y[Propriedade 1]
+            X -->|Detalhe 2| Z[Propriedade 2]
+            X -->|Detalhe 3| L[Propriedade 3]
+        end
+
+        Estado_A ---> Estado_B
+
+    end
+```
+
+Ao trabalhar com CSPs, iremos dar ênfase a representação fatorada do estados 
+pois precisamos ter uma visão mais granular sobre o problema, e tendo a 
+possibilidade de quebrar o problema em subproblemas facilita a encontrar a
+solução.
+
 # Definindo Problemas de Satisfação de Condições
+
+A idéia principal de usar uma CSP se baseia em achar uma solução eliminando
+grandes porções do espaço de busca ao identificar condições neste espaço de
+busca que impossibilitam o resultado.
 
 Em termos mais técnicos, um CSPs são tipicamente definidas por três 
 componentes:
@@ -48,6 +89,18 @@ componentes:
 - **Variáveis** (X): Um conjunto finito de variáveis que precisam ser resolvidas.
 - **Domínios** (D): Um conjunto finito de valores que as variáveis podem assumir.
 - **Restrições** (C): Um conjunto de condições que as soluções devem satisfazer.
+
+Tendo definido isso, podemos dizer que CSPs lidam com atribuições de valores
+às variáveis.
+- Quando uma atribuição não viola nenhuma restrição, ela é chamada de
+**consistente**;
+- Quando todas as variáveis recebem um valor, a atribuição é **completa**;
+- Quando nem todas as variáveis recebem um valor, a atribuição é **parcial**;
+
+Então para definir uma **solução**, precisamos que ela seja 
+**consistente e completa**. Logo, uma solução parcial é aquela que é completa
+porém nem todas as variáveis são atribuias a algum valor.
+Soluções de CSP são problemas NP-Completo em geral.
 
 # Tipos de Condições
 

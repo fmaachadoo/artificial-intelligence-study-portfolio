@@ -32,3 +32,5 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Algoritmos genéticos](genetic_algorithms.md)
     * [Discussões](portfolio_2_discussions.md)
     * [Projetos e problemas](portfolio_2_projects.md)
+- Entrega 3
+    * [Problemas de Satisfação de Condições (CSPs)](csp.md)

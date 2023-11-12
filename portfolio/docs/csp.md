@@ -38,7 +38,7 @@ de campos, desde planejamento e agendamento até design de circuitos e jogos.
 Como engenheiros de software, entender e aplicar CSPs pode nos ajudar a criar 
 soluções mais eficientes e eficazes para problemas complexos.
 
-# Representação Atômica vs Fatorada
+## Representação Atômica vs Fatorada
 
 A representação atômica de um estado é similar a uma representação de caixa 
 preta, ou seja, não temos informações sobre suas propriedades e componentes
@@ -77,7 +77,7 @@ pois precisamos ter uma visão mais granular sobre o problema, e tendo a
 possibilidade de quebrar o problema em subproblemas facilita a encontrar a
 solução.
 
-# Definindo Problemas de Satisfação de Condições
+## Definindo Problemas de Satisfação de Condições
 
 A idéia principal de usar uma CSP se baseia em achar uma solução eliminando
 grandes porções do espaço de busca ao identificar condições neste espaço de
@@ -102,10 +102,10 @@ Então para definir uma **solução**, precisamos que ela seja
 porém nem todas as variáveis são atribuias a algum valor.
 Soluções de CSP são problemas NP-Completo em geral.
 
-# Tipos de Condições
+## Tipos de Condições
 
 
-## Condições necessárias
+### Condições necessárias
 
 Iremos dar ênfase aos seguintes tipos de condições:
 
@@ -212,10 +212,10 @@ também assegura a consistência local das soluções, dois aspectos cruciais pa
 eficiência dos sistemas que desenvolvemos e mantemos.
 
 
-# Consistência
+## Consistência
 
 
-## Consistência de Nó
+### Consistência de Nó
 
 A consistência de nodo ocorre quando todas as restrições unárias são 
 satisfeitas. Isso significa que cada variável individualmente deve satisfazer 
@@ -224,7 +224,7 @@ geralmente é o ponto de partida para algoritmos de CSP. Envolve a verificação
 a adequação dos domínios de variáveis individuais para atender a restrições 
 unárias.
 
-## Consistência de Arco
+### Consistência de Arco
 
 Um arco entre duas variáveis \(X\) e \(Y\) é consistente se, para cada valor no 
 domínio de \(X\), existe algum valor no domínio de \(Y\) que satisfaça a 
@@ -233,7 +233,7 @@ Algoritmos como o AC-3 (Algorithm for Arc Consistency) são usados para alcança
 a consistência de arco, removendo valores dos domínios das variáveis que não 
 podem participar de soluções válidas.
 
-## Consistência de Trajeto
+### Consistência de Trajeto
 
 Um CSP é dito trajeto consistente se, para cada trio de variáveis, todas as 
 combinações de valores que satisfazem as restrições binárias entre elas são 
@@ -241,7 +241,7 @@ compatíveis com as restrições terciárias aplicáveis. É mais complexa e men
 comum que a consistência de nodo e arco. Envolve a consideração de trios de 
 variáveis e é útil em CSPs onde as relações entre três variáveis são cruciais.
 
-## Consistência Global
+### Consistência Global
 
 Um CSP é globalmente consistente se, para cada subconjunto de variáveis e para 
 cada atribuição possível a esse subconjunto que satisfaz as restrições sobre 
@@ -250,7 +250,7 @@ nenhuma restrição. É o tipo mais forte de consistência, mas também o mais
 difícil de alcançar e verificar. Geralmente, não é prático verificar a 
 consistência global para problemas grandes, mas é um objetivo desejável.
 
-## Consistência K (k-Consistency)
+### Consistência K (k-Consistency)
 
 Um CSP é k-consistente se para qualquer conjunto de \(k-1\) variáveis e uma 
 atribuição consistente a essas variáveis, a extensão dessa atribuição a uma 
@@ -259,7 +259,7 @@ oferece um meio-termo entre a simplicidade da consistência de nó/arco e a
 complexidade da consistência global. A consistência 2, por exemplo, é 
 equivalente à consistência de arco.
 
-# Algoritmos
+## Algoritmos
 
 ### Backtracking
 
@@ -397,9 +397,38 @@ def min_conflicts(csp, max_steps=1000):
 # Nota: Este é um exemplo conceitual. A implementação real exigiria uma estrutura de dados CSP mais detalhada.
 ```
 
-#### Exemplo em Python:
+---
 
-# Estrutura de Problemas
+## Estrutura de Problemas
+
+**Arvore de Busca e Pruning**: Utilizando árvores de busca para representar o 
+espaço de busca, podemos dizer que os algoritmos de CSP são mais eficientes que os
+algoritmos de procura tradicionais, pois eles conseguem realizar podas
+eficientes na árvore de busca. Algoritmos de CSP são eficientes em 
+identificar e descartar ramos da árvore de busca que não podem levar a 
+soluções válidas. Isso é feito por meio da verificação de restrições: se uma 
+atribuição parcial viola uma restrição, não há necessidade de explorar mais 
+adiante nesse ramo.
+
+A afirmação de que "algoritmos baseados em CSPs são, na prática, mais
+eficientes que algoritmos de procura tradicionais" pode ser considerada 
+correta em muitos contextos, especialmente em relação à capacidade desses 
+algoritmos de realizar podas eficientes na árvore de busca, como no exemplo 
+do problema de coloração do mapa da Austrália. Vamos analisar a afirmação em 
+detalhes:
+
+**Comparação com Procura Tradicional**: Em algoritmos de busca tradicionais,
+como busca em profundidade ou largura, todas as possíveis combinações teriam 
+que ser exploradas de maneira mais uniforme, sem a vantagem de eliminar opções 
+com base na violação de restrições.
+
+Portanto, é correto dizer que os algoritmos de CSP, ao 
+aplicarem restrições de maneira eficaz, podem ser mais eficientes do que 
+métodos de busca tradicionais, especialmente em problemas onde as restrições 
+desempenham um papel crucial na definição de soluções válidas.
+Essa eficiência em CSPs é particularmente notável em problemas complexos e de 
+grande escala, onde a habilidade de reduzir rapidamente o espaço de busca é 
+essencial para encontrar soluções em um tempo razoável.
 
 # Discussões
 

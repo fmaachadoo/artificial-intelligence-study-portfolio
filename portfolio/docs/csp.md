@@ -214,17 +214,188 @@ eficiência dos sistemas que desenvolvemos e mantemos.
 
 # Consistência
 
-## Nó
 
-## Arco
+## Consistência de Nó
 
-## Trajeto
+A consistência de nodo ocorre quando todas as restrições unárias são 
+satisfeitas. Isso significa que cada variável individualmente deve satisfazer 
+as restrições que lhe são impostas. É o tipo mais básico de consistência e 
+geralmente é o ponto de partida para algoritmos de CSP. Envolve a verificação e 
+a adequação dos domínios de variáveis individuais para atender a restrições 
+unárias.
 
-## K
+## Consistência de Arco
 
-## Globais
+Um arco entre duas variáveis \(X\) e \(Y\) é consistente se, para cada valor no 
+domínio de \(X\), existe algum valor no domínio de \(Y\) que satisfaça a 
+restrição entre \(X\) e \(Y\). É crucial em CSPs com restrições binárias. 
+Algoritmos como o AC-3 (Algorithm for Arc Consistency) são usados para alcançar 
+a consistência de arco, removendo valores dos domínios das variáveis que não 
+podem participar de soluções válidas.
+
+### Consistência de Trajeto
+
+Um CSP é dito trajeto consistente se, para cada trio de variáveis, todas as 
+combinações de valores que satisfazem as restrições binárias entre elas são 
+compatíveis com as restrições terciárias aplicáveis. É mais complexa e menos 
+comum que a consistência de nodo e arco. Envolve a consideração de trios de 
+variáveis e é útil em CSPs onde as relações entre três variáveis são cruciais.
+
+### Consistência Global
+
+Um CSP é globalmente consistente se, para cada subconjunto de variáveis e para 
+cada atribuição possível a esse subconjunto que satisfaz as restrições sobre 
+ele, é possível estender essa atribuição ao resto das variáveis sem violar 
+nenhuma restrição. É o tipo mais forte de consistência, mas também o mais 
+difícil de alcançar e verificar. Geralmente, não é prático verificar a 
+consistência global para problemas grandes, mas é um objetivo desejável.
+
+### Consistência K (k-Consistency)
+
+Um CSP é k-consistente se para qualquer conjunto de \(k-1\) variáveis e uma 
+atribuição consistente a essas variáveis, a extensão dessa atribuição a uma 
+k-ésima variável é consistente com as restrições do CSP. A consistência k 
+oferece um meio-termo entre a simplicidade da consistência de nó/arco e a 
+complexidade da consistência global. A consistência 2, por exemplo, é 
+equivalente à consistência de arco.
 
 # Algoritmos
+
+### Backtracking
+
+É o algoritmo mais básico e direto para resolver CSPs. Ele tenta atribuir 
+valores a cada variável sequencialmente e volta atrás (backtrack) quando uma 
+restrição é violada. Utilizado em problemas de CSP mais simples e é a base para 
+muitos outros algoritmos mais sofisticados.
+
+#### Exemplo em Python:
+
+```python
+def backtrack(assignment, csp):
+    # Verifica se a atribuição está completa
+    if len(assignment) == len(csp.variables):
+        return assignment
+
+    # Seleciona uma variável ainda não atribuída
+    var = select_unassigned_variable(assignment, csp)
+
+    # Testa todos os valores possíveis para a variável
+    for value in csp.domains[var]:
+        # Checa se a atribuição atual é consistente com as restrições do CSP
+        if is_consistent(var, value, assignment, csp):
+            assignment[var] = value  # Atribui o valor à variável
+            result = backtrack(assignment, csp)  # Continua recursivamente
+            if result:
+                return result  # Retorna a solução, se encontrada
+            assignment.pop(var)  # Caso contrário, remove a atribuição e tenta outra
+
+    return False  # Retorna False se nenhuma atribuição válida for encontrada
+```
+
+### Algoritmo de Arc Consistency (AC-3)
+
+AC-3 é um algoritmo para alcançar a consistência de arco em CSPs. Ele examina 
+sistematicamente pares de variáveis e elimina valores inconsistentes dos seus 
+domínios. Comumente usado como um pré-processamento em CSPs para reduzir o 
+espaço de busca antes de aplicar algoritmos como backtracking.
+
+#### Exemplo em Python:
+
+```python
+def ac3(csp):
+    # Inicializa a fila com todos os arcos do CSP
+    queue = [(Xi, Xj) for Xi in csp.variables for Xj in csp.neighbors[Xi]]
+
+    # Processa cada arco na fila
+    while queue:
+        Xi, Xj = queue.pop(0)  # Remove um arco da fila
+
+        # Revisa o arco e atualiza o domínio de Xi se necessário
+        if revise(csp, Xi, Xj):
+            if not csp.domains[Xi]:
+                return False  # Retorna False se o domínio de Xi ficar vazio
+
+            # Adiciona novamente à fila todos os arcos que afetam Xi
+            for Xk in csp.neighbors[Xi]:
+                if Xk != Xj:
+                    queue.append((Xk, Xi))
+
+    return True  # Retorna True se todos os arcos forem consistentes
+
+def revise(csp, Xi, Xj):
+    """Revisa o domínio de Xi para garantir consistência com Xj.
+
+    Args:
+        csp: O problema de CSP, contendo variáveis, domínios e restrições.
+        Xi: A variável cujo domínio está sendo revisado.
+        Xj: A variável vizinha de Xi.
+
+    Returns:
+        True se houver alguma revisão no domínio de Xi, False caso contrário.
+    """
+    revised = False
+    for x in csp.domains[Xi][:]:  # Copia do domínio para evitar modificar durante iteração
+        # Se não existe nenhum valor em Xj que satisfaça a restrição com x, remove x do domínio de Xi
+        if not any(is_satisfied(x, y, csp.constraints[Xi, Xj]) for y in csp.domains[Xj]):
+            csp.domains[Xi].remove(x)
+            revised = True
+    return revised
+
+def is_satisfied(x, y, constraint):
+    """Verifica se a restrição entre x e y é satisfeita.
+
+    Args:
+        x: Valor da variável Xi.
+        y: Valor da variável Xj.
+        constraint: A restrição entre Xi e Xj.
+
+    Returns:
+        True se a restrição é satisfeita, False caso contrário.
+    """
+    # Implementação específica da restrição
+    pass
+
+```
+
+### Min-conflicts
+
+Um algoritmo de busca local que seleciona uma variável que está em conflito e 
+muda seu valor para minimizar o número de conflitos. 
+Particularmente eficaz em problemas com uma grande densidade de restrições. 
+É útil em CSPs de grande escala onde uma solução ótima não é necessária, mas 
+uma solução "boa o suficiente" é aceitável.
+
+```python
+import random
+
+def min_conflicts(csp, max_steps=1000):
+    def conflicts(var, value):
+        # Conta o número de conflitos se 'var' for atribuído a 'value'
+        return sum(1 for neighbor in csp.neighbors[var] if value == csp.assignment[neighbor])
+
+    for _ in range(max_steps):
+        # Identifica todas as variáveis que estão em conflito
+        conflicted = [var for var in csp.variables if conflicts(var, csp.assignment[var]) > 0]
+
+        # Se não há conflitos, a solução atual é retornada
+        if not conflicted:
+            return csp.assignment
+
+        # Escolhe aleatoriamente uma variável em conflito
+        var = random.choice(conflicted)
+
+        # Escolhe o valor para 'var' que minimiza o número de conflitos
+        value = min(csp.domains[var], key=lambda val: conflicts(var, val))
+
+        # Atribui o valor escolhido a 'var'
+        csp.assignment[var] = value
+
+    return None  # Retorna None se nenhuma solução for encontrada dentro do limite de passos
+
+# Nota: Este é um exemplo conceitual. A implementação real exigiria uma estrutura de dados CSP mais detalhada.
+```
+
+#### Exemplo em Python:
 
 # Estrutura de Problemas
 
@@ -239,3 +410,7 @@ https://folivetti.github.io/courses/IA/PDF/Aula04.pdf
 https://en.wikipedia.org/wiki/AC-3_algorithm
 
 https://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-3.pdf
+
+https://www.cs.ubc.ca/~kevinlb/teaching/cs322%20-%202009-10/Lectures/CSP3.pdf
+
+https://ktiml.mff.cuni.cz/~bartak/constraints/stochastic.html

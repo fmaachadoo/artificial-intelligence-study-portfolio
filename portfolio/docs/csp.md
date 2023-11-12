@@ -233,7 +233,7 @@ Algoritmos como o AC-3 (Algorithm for Arc Consistency) são usados para alcança
 a consistência de arco, removendo valores dos domínios das variáveis que não 
 podem participar de soluções válidas.
 
-### Consistência de Trajeto
+## Consistência de Trajeto
 
 Um CSP é dito trajeto consistente se, para cada trio de variáveis, todas as 
 combinações de valores que satisfazem as restrições binárias entre elas são 
@@ -241,7 +241,7 @@ compatíveis com as restrições terciárias aplicáveis. É mais complexa e men
 comum que a consistência de nodo e arco. Envolve a consideração de trios de 
 variáveis e é útil em CSPs onde as relações entre três variáveis são cruciais.
 
-### Consistência Global
+## Consistência Global
 
 Um CSP é globalmente consistente se, para cada subconjunto de variáveis e para 
 cada atribuição possível a esse subconjunto que satisfaz as restrições sobre 
@@ -250,7 +250,7 @@ nenhuma restrição. É o tipo mais forte de consistência, mas também o mais
 difícil de alcançar e verificar. Geralmente, não é prático verificar a 
 consistência global para problemas grandes, mas é um objetivo desejável.
 
-### Consistência K (k-Consistency)
+## Consistência K (k-Consistency)
 
 Um CSP é k-consistente se para qualquer conjunto de \(k-1\) variáveis e uma 
 atribuição consistente a essas variáveis, a extensão dessa atribuição a uma 

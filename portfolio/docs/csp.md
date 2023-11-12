@@ -430,11 +430,93 @@ Essa eficiência em CSPs é particularmente notável em problemas complexos e de
 grande escala, onde a habilidade de reduzir rapidamente o espaço de busca é 
 essencial para encontrar soluções em um tempo razoável.
 
-# Discussões
+## Discussões
 
-# Projetos e problemas
+Um algoritmo não discutido em sala de aula, e que é relacionado aos algoritmos
+discutidos, temos o AC-6:
 
-# Bibliografia
+### Algoritmo AC-6
+
+O AC-3 e o AC-6 são algoritmos projetados para impor a consistência de arco em 
+problemas de satisfação de restrições (CSPs), mas diferem em eficiência e 
+complexidade. O AC-3, mais simples de implementar, revisa todos os arcos que 
+incidem sobre uma variável cada vez que um valor é removido de seu domínio, o 
+que pode levar a revisões repetitivas e desnecessárias. Em contraste, o AC-6, 
+mais complexo na implementação, utiliza estruturas de dados auxiliares para 
+rastrear especificamente quais valores são consistentes entre as variáveis, 
+reduzindo assim o número total de revisões. Isso torna o AC-6 geralmente mais 
+rápido do que o AC-3, especialmente em CSPs com uma grande quantidade de 
+restrições e domínios extensos, pois minimiza o trabalho redundante e melhora a 
+eficiência global do processo de busca por consistência.
+
+Implementar o algoritmo AC-6 é consideravelmente mais complexo do que AC-3 
+devido à necessidade de manter estruturas de dados adicionais para rastrear as 
+relações de suporte entre os valores das variáveis. No entanto, posso fornecer 
+um esqueleto de como o algoritmo AC-6 seria estruturado em Python, com 
+comentários que explicam cada parte do processo.
+
+Simplificando o algoritmo AC-6, ele funciona da seguinte maneira... Exemplo em 
+python:
+
+```python
+class AC6:
+    def __init__(self, csp):
+        self.csp = csp  # CSP problem with variables, domains, and constraints
+        self.queue = []  # Queue of arcs
+        self.supports = {}  # Support structure to keep track of consistent values
+
+    def initialize(self):
+        # Initialize the support structure and queue
+        for xi in self.csp.variables:
+            for xj in self.csp.neighbors[xi]:
+                for a in self.csp.domains[xi]:
+                    # Initialize supports to keep track of values in xj's domain that are consistent with a
+                    self.supports[(xi, a, xj)] = set(val for val in self.csp.domains[xj] if self.csp.is_consistent(xi, a, xj, val))
+                    if not self.supports[(xi, a, xj)]:
+                        self.csp.domains[xi].remove(a)
+                    if len(self.csp.domains[xi]) == 0:
+                        return False  # No solution exists
+                for b in self.csp.domains[xj]:
+                    if not any(self.csp.is_consistent(xi, a, xj, b) for a in self.csp.domains[xi]):
+                        self.queue.append((xj, xi, b))  # Add arc to queue if b has no support
+
+        return True
+
+    def revise(self, xi, xj, b):
+        # Revise the domain of xi based on the value b of xj
+        revised = False
+        for a in self.csp.domains[xi][:]:  # Iterate over a copy to allow removal
+            if b not in self.supports[(xi, a, xj)]:
+                self.csp.domains[xi].remove(a)  # Remove a if it is not supported by b
+                revised = True
+                if len(self.csp.domains[xi]) == 0:
+                    return False  # No solution exists
+        return revised
+
+    def run(self):
+        # Main loop of AC-6
+        if not self.initialize():
+            return False  # No solution exists
+
+        while self.queue:
+            xj, xi, b = self.queue.pop(0)
+            if self.revise(xi, xj, b):
+                for xk in self.csp.neighbors[xi]:
+                    for a in self.csp.domains[xk]:
+                        if a not in self.supports[(xk, a, xi)]:
+                            self.queue.append((xi, xk, a))  # Add arc to queue if a loses support
+
+        return True  # CSP is arc consistent
+```
+Notem que este código é um esboço e não funcionará sem uma implementação 
+completa das estruturas de dados de CSP e das funções de verificação de 
+consistência. Em um sistema real, implementar o AC-6, exigiria uma compreensão 
+profunda do problema de CSP em questão e uma implementação detalhada das 
+restrições e da lógica de suporte.
+
+## Projetos e problemas
+
+## Bibliografia
 
 https://folivetti.github.io/courses/IA/PDF/Aula04.pdf
 
@@ -445,3 +527,7 @@ https://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-3.pdf
 https://www.cs.ubc.ca/~kevinlb/teaching/cs322%20-%202009-10/Lectures/CSP3.pdf
 
 https://ktiml.mff.cuni.cz/~bartak/constraints/stochastic.html
+
+https://www.slideserve.com/asis/maintaining-arc-consistency-ac-6-powerpoint-ppt-presentation
+
+https://www.researchgate.net/publication/220565739_Propositional_Satisfiability_and_Constraint_Programming_A_comparative_survey

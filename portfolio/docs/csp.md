@@ -365,6 +365,8 @@ Particularmente eficaz em problemas com uma grande densidade de restrições.
 É útil em CSPs de grande escala onde uma solução ótima não é necessária, mas 
 uma solução "boa o suficiente" é aceitável.
 
+#### Exemplo em Python:
+
 ```python
 import random
 

@@ -1,0 +1,1348 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Estudos de inteligência artificial.">
+      
+      
+        <meta name="author" content="Filipe Machado">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Problemas de Satisfação de Condições (CSPs) - IA Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#problemas-de-satisfacao-de-condicoes-csps" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="IA Portfolio" class="md-header__button md-logo" aria-label="IA Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IA Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Problemas de Satisfação de Condições (CSPs)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmaachadoo/artificial-intelligence-study-portfolio
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IA Portfolio" class="md-nav__button md-logo" aria-label="IA Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IA Portfolio
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmaachadoo/artificial-intelligence-study-portfolio
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    História
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../state-of-the-art/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estado da Arte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem_solving_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentes de Soluções de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de Busca
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heuristics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funções Heurísticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complex_environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Busca em ambientes complexos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../genetic_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos genéticos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_discussions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussões (Porfolio 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projetos e problemas (Porfolio 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#impressoes-iniciais" class="md-nav__link">
+    Impressões iniciais
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representacao-atomica-vs-fatorada" class="md-nav__link">
+    Representação Atômica vs Fatorada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definindo-problemas-de-satisfacao-de-condicoes" class="md-nav__link">
+    Definindo Problemas de Satisfação de Condições
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-condicoes" class="md-nav__link">
+    Tipos de Condições
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Condições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condicoes-necessarias" class="md-nav__link">
+    Condições necessárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-unarias" class="md-nav__link">
+    Restrições Unárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-binarias" class="md-nav__link">
+    Restrições Binárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-de-alta-ordem-ternaria" class="md-nav__link">
+    Restrições de Alta Ordem (Ternária+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-globais" class="md-nav__link">
+    Restrições Globais
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicoes-de-preferencia" class="md-nav__link">
+    Condições de preferência
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propagacao-de-condicao" class="md-nav__link">
+    Propagação de condição
+  </a>
+  
+    <nav class="md-nav" aria-label="Propagação de condição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionamento" class="md-nav__link">
+    Funcionamento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-no-desenvolvimento-de-software" class="md-nav__link">
+    Impacto no Desenvolvimento de Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistencia" class="md-nav__link">
+    Consistência
+  </a>
+  
+    <nav class="md-nav" aria-label="Consistência">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-no" class="md-nav__link">
+    Consistência de Nó
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-arco" class="md-nav__link">
+    Consistência de Arco
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-trajeto" class="md-nav__link">
+    Consistência de Trajeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-global" class="md-nav__link">
+    Consistência Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-k-k-consistency" class="md-nav__link">
+    Consistência K (k-Consistency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmos" class="md-nav__link">
+    Algoritmos
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backtracking" class="md-nav__link">
+    Backtracking
+  </a>
+  
+    <nav class="md-nav" aria-label="Backtracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-de-arc-consistency-ac-3" class="md-nav__link">
+    Algoritmo de Arc Consistency (AC-3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmo de Arc Consistency (AC-3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python_1" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-conflicts" class="md-nav__link">
+    Min-conflicts
+  </a>
+  
+    <nav class="md-nav" aria-label="Min-conflicts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python_2" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-problemas" class="md-nav__link">
+    Estrutura de Problemas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussoes" class="md-nav__link">
+    Discussões
+  </a>
+  
+    <nav class="md-nav" aria-label="Discussões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-ac-6" class="md-nav__link">
+    Algoritmo AC-6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projetos-e-problemas" class="md-nav__link">
+    Projetos e problemas
+  </a>
+  
+    <nav class="md-nav" aria-label="Projetos e problemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-de-agendamento-de-eventos" class="md-nav__link">
+    Problema de agendamento de eventos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografia
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="problemas-de-satisfacao-de-condicoes-csps"><strong>Problemas de Satisfação de Condições (CSPs)</strong></h1>
+<h2 id="impressoes-iniciais">Impressões iniciais</h2>
+<p>Como engenheiro de software, você provavelmente já se deparou com problemas 
+complexos que envolvem várias condições e restrições. Nesse contexto, os 
+Problemas de Satisfação de Restrições (CSPs) são extremamente relevantes.</p>
+<p>Imagine que você está desenvolvendo um sistema de agendamento. 
+Há várias variáveis em jogo: as disponibilidades de tempo, os recursos 
+necessários, as preferências dos usuários, entre outros. 
+Aqui, cada variável (X) representa um elemento desse sistema - por exemplo, 
+um intervalo de tempo específico ou um recurso. Cada uma dessas variáveis tem 
+um domínio (D), que é o conjunto de valores possíveis que ela pode assumir. 
+Por exemplo, o domínio de um intervalo de tempo pode ser as horas do dia 
+durante as quais uma sala está disponível.</p>
+<p>Agora, as restrições (C) são as condições que determinam como essas variáveis 
+podem ser combinadas. Por exemplo, uma sala não pode ser reservada para dois 
+eventos diferentes ao mesmo tempo. O desafio em CSPs é encontrar uma 
+atribuição para todas as variáveis que satisfaça todas essas restrições.</p>
+<p>Resolver CSPs pode ser complexo, especialmente quando temos muitas variáveis e 
+restrições. Uma abordagem é usar backtracking, que é um tipo de pesquisa em 
+profundidade. Basicamente, você tenta uma solução, e se encontrar um conflito, 
+volta atrás (backtrack) e tenta uma abordagem diferente. 
+É um método poderoso, mas pode ser ineficiente para problemas muito grandes.</p>
+<p>Outras técnicas incluem algoritmos de consistência local, que tentam reduzir o 
+tamanho do problema eliminando valores que não podem fazer parte de uma solução 
+válida. Também temos heurísticas de pesquisa, como a busca com propagação de 
+restrições, que tentam antecipar e resolver conflitos antes que eles ocorram.</p>
+<p>Em resumo, os CSPs são uma ferramenta poderosa em IA e ciência da computação, 
+ajudando-nos a lidar com problemas complexos onde várias condições e restrições 
+precisam ser satisfeitas simultaneamente. Eles são aplicáveis em uma variedade 
+de campos, desde planejamento e agendamento até design de circuitos e jogos. 
+Como engenheiros de software, entender e aplicar CSPs pode nos ajudar a criar 
+soluções mais eficientes e eficazes para problemas complexos.</p>
+<h2 id="representacao-atomica-vs-fatorada">Representação Atômica vs Fatorada</h2>
+<p>A representação atômica de um estado é similar a uma representação de caixa 
+preta, ou seja, não temos informações sobre suas propriedades e componentes
+internos. Quando temos uma representação mais complexa e expressiva, temos
+uma representação fatorada, onde temos acesso aos atributos de um estado.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Representação Atômica"
+        A[Estado atômico A] --&gt; B[Estado Atômico B] --&gt; C[Estado Atômico C]
+    end
+
+
+    subgraph "Representação Fatorada"
+        subgraph Estado_A
+            F[Estado fatorado A]
+            F --&gt;|Detalhe 1| J[Propriedade 1]
+            F --&gt;|Detalhe 2| K[Propriedade 2]
+            F --&gt;|Detalhe 3| I[Propriedade 3]
+        end
+
+        subgraph Estado_B
+            X[Estado fatorado A]
+            X --&gt;|Detalhe 1| Y[Propriedade 1]
+            X --&gt;|Detalhe 2| Z[Propriedade 2]
+            X --&gt;|Detalhe 3| L[Propriedade 3]
+        end
+
+        Estado_A ---&gt; Estado_B
+
+    end</code></pre>
+<p>Ao trabalhar com CSPs, iremos dar ênfase a representação fatorada do estados 
+pois precisamos ter uma visão mais granular sobre o problema, e tendo a 
+possibilidade de quebrar o problema em subproblemas facilita a encontrar a
+solução.</p>
+<h2 id="definindo-problemas-de-satisfacao-de-condicoes">Definindo Problemas de Satisfação de Condições</h2>
+<p>A idéia principal de usar uma CSP se baseia em achar uma solução eliminando
+grandes porções do espaço de busca ao identificar condições neste espaço de
+busca que impossibilitam o resultado.</p>
+<p>Em termos mais técnicos, um CSPs são tipicamente definidas por três 
+componentes:</p>
+<ul>
+<li><strong>Variáveis</strong> (X): Um conjunto finito de variáveis que precisam ser resolvidas.</li>
+<li><strong>Domínios</strong> (D): Um conjunto finito de valores que as variáveis podem assumir.</li>
+<li><strong>Restrições</strong> (C): Um conjunto de condições que as soluções devem satisfazer.</li>
+</ul>
+<p>Tendo definido isso, podemos dizer que CSPs lidam com atribuições de valores
+às variáveis.
+- Quando uma atribuição não viola nenhuma restrição, ela é chamada de
+<strong>consistente</strong>;
+- Quando todas as variáveis recebem um valor, a atribuição é <strong>completa</strong>;
+- Quando nem todas as variáveis recebem um valor, a atribuição é <strong>parcial</strong>;</p>
+<p>Então para definir uma <strong>solução</strong>, precisamos que ela seja 
+<strong>consistente e completa</strong>. Logo, uma solução parcial é aquela que é completa
+porém nem todas as variáveis são atribuias a algum valor.
+Soluções de CSP são problemas NP-Completo em geral.</p>
+<h2 id="tipos-de-condicoes">Tipos de Condições</h2>
+<h3 id="condicoes-necessarias">Condições necessárias</h3>
+<p>Iremos dar ênfase aos seguintes tipos de condições:</p>
+<ul>
+<li>Unárias</li>
+<li>Binária</li>
+<li>Alta Ordem (Ternária+)</li>
+<li>Global</li>
+</ul>
+<h3 id="restricoes-unarias">Restrições Unárias</h3>
+<ul>
+<li><strong>Conceito</strong>: As restrições unárias são as mais simples em CSPs. 
+Elas afetam uma única variável.</li>
+<li><strong>Exemplo</strong>: Uma restrição que especifica que uma variável ( X ) deve 
+ser maior que 5.</li>
+</ul>
+<h3 id="restricoes-binarias">Restrições Binárias</h3>
+<ul>
+<li><strong>Conceito</strong>: As restrições binárias envolvem duas variáveis e estabelecem 
+uma relação entre elas.</li>
+<li><strong>Exemplo</strong>: Uma restrição que exige que duas variáveis ( X ) e 
+( Y ) sejam diferentes entre si.</li>
+</ul>
+<h3 id="restricoes-de-alta-ordem-ternaria">Restrições de Alta Ordem (Ternária+)</h3>
+<ul>
+<li><strong>Conceito</strong>: As restrições de alta ordem envolvem três ou mais variáveis.
+Elas são mais complexas que as unárias e binárias e permitem expressar relações
+entre grupos de muitas variáveis.</li>
+<li><strong>Exemplo</strong>: Uma restrição que determina que a soma das variáveis ( X, Y, )
+e ( Z ) deve ser igual a um valor específico.</li>
+</ul>
+<h3 id="restricoes-globais">Restrições Globais</h3>
+<ul>
+<li><strong>Conceito</strong>: As restrições globais afetam um grande número de variáveis, às 
+vezes todas em um CSP. 
+Elas são úteis para expressar condições abrangentes que envolvem múltiplas 
+variáveis.</li>
+<li><strong>Exemplo</strong>: Uma restrição de que todas as variáveis em um conjunto devem 
+ter valores diferentes, como na regra do Sudoku, onde cada número deve 
+aparecer apenas uma vez em cada linha, coluna e bloco.</li>
+</ul>
+<p><strong>Qualquer uma dessas condições de CSP podem ser reduzidas a condições biárias.</strong></p>
+<h2 id="condicoes-de-preferencia">Condições de preferência</h2>
+<p>Ao contrário das condições necessárias, que são obrigatórias para resolução do
+CSP, as condições de preferência servem para encontrarmos uma solução preferida.</p>
+<p><strong>Por exemplo:</strong></p>
+<blockquote>
+<p>Em um jogo onde um mago precisa atravessar o campo de batalha,
+ele tem diversos caminhos para escolher que satisfazem as condições que o mago
+irá chegar ao outro lado do campo vivo e sem atacar nenhum aliado. Mas o mago
+pode preferir ir por um caminho onde ele enfrente o máximo de inimigos, 
+ou então pode preferir ir por um caminho onde há mais espólios, ou então pode
+preferir ir por um caminho onde ele perca o mínimo de vida possível. Isso tudo
+são preferências, e não uma condição obrigatória.</p>
+</blockquote>
+<h2 id="propagacao-de-condicao">Propagação de condição</h2>
+<p>Para ocorrer a propagação de condições, um algoritmo CSP reduz o domínio de
+valores que uma variável pode assumir, que pode reduzir o domínio de outra
+variável e assim sucessivamente. O objetivo de propagação de condições é
+garantir a consistência local.</p>
+<p>Para explicar o parágrafo acima, iremos explicar como ocorre o funcionamento
+da propagação de condições em CSPs:</p>
+<h3 id="funcionamento">Funcionamento</h3>
+<p><strong>Redução de Domínio</strong>: Inicialmente, cada variável em um CSP tem um 
+conjunto de possíveis valores que pode assumir (seu domínio). Quando 
+uma restrição é aplicada, o domínio de uma variável pode ser reduzido. 
+Por exemplo, se temos uma variável ( X ) com um domínio de {1, 2, 3, 4, 5} e
+uma restrição unária ( X &gt; 2 ), o domínio de ( X ) é reduzido para 
+{3, 4, 5}.</p>
+<p><strong>Efeito Cascata</strong>: Esta redução pode ter um efeito cascata. Considerando 
+uma restrição binária entre ( X ) e ( Y ), a alteração no domínio de 
+( X ) pode levar a uma redução no domínio de ( Y ). Por exemplo, se 
+( Y ) deve ser diferente de ( X ) e o novo domínio de ( X ) é {3, 4, 5}, 
+então os valores correspondentes são removidos do domínio de ( Y ).</p>
+<p><strong>Consistência Local</strong>: O objetivo da propagação é alcançar a 
+consistência local. Isso significa que para cada variável e suas restrições 
+diretas (com outras variáveis), existe pelo menos uma atribuição válida que 
+satisfaz as restrições.</p>
+<h3 id="impacto-no-desenvolvimento-de-software">Impacto no Desenvolvimento de Software</h3>
+<p>Para um engenheiro de software, a questão de propagação de condições pode ter
+as seguintes importâncias:</p>
+<ul>
+<li>
+<p><strong>Otimização de Algoritmos</strong>: Utilizar a propagação de condições em CSPs pode
+significar a diferença entre um algoritmo que resolve problemas em tempo hábil e
+um que não é viável para uso prático.</p>
+</li>
+<li>
+<p><strong>Complexidade Computacional</strong>: A propagação eficaz de condições pode reduzir
+drasticamente o espaço de busca, diminuindo a complexidade computacional do
+problema.</p>
+</li>
+<li>
+<p><strong>Aplicações Práticas</strong>: Em sistemas de agendamento, planejamento de recursos,
+ou em soluções de problemas lógicos como Sudoku, a propagação de condições é uma
+técnica essencial para garantir soluções eficientes.</p>
+</li>
+</ul>
+<p>Em resumo, a propagação de condições em CSPs é uma técnica fundamental para 
+qualquer engenheiro de software envolvido na solução de problemas complexos que 
+requerem otimização e eficiência. Ela não só reduz o espaço de busca, como 
+também assegura a consistência local das soluções, dois aspectos cruciais para a 
+eficiência dos sistemas que desenvolvemos e mantemos.</p>
+<h2 id="consistencia">Consistência</h2>
+<h3 id="consistencia-de-no">Consistência de Nó</h3>
+<p>A consistência de nodo ocorre quando todas as restrições unárias são 
+satisfeitas. Isso significa que cada variável individualmente deve satisfazer 
+as restrições que lhe são impostas. É o tipo mais básico de consistência e 
+geralmente é o ponto de partida para algoritmos de CSP. Envolve a verificação e 
+a adequação dos domínios de variáveis individuais para atender a restrições 
+unárias.</p>
+<h3 id="consistencia-de-arco">Consistência de Arco</h3>
+<p>Um arco entre duas variáveis (X) e (Y) é consistente se, para cada valor no 
+domínio de (X), existe algum valor no domínio de (Y) que satisfaça a 
+restrição entre (X) e (Y). É crucial em CSPs com restrições binárias. 
+Algoritmos como o AC-3 (Algorithm for Arc Consistency) são usados para alcançar 
+a consistência de arco, removendo valores dos domínios das variáveis que não 
+podem participar de soluções válidas.</p>
+<h3 id="consistencia-de-trajeto">Consistência de Trajeto</h3>
+<p>Um CSP é dito trajeto consistente se, para cada trio de variáveis, todas as 
+combinações de valores que satisfazem as restrições binárias entre elas são 
+compatíveis com as restrições terciárias aplicáveis. É mais complexa e menos 
+comum que a consistência de nodo e arco. Envolve a consideração de trios de 
+variáveis e é útil em CSPs onde as relações entre três variáveis são cruciais.</p>
+<h3 id="consistencia-global">Consistência Global</h3>
+<p>Um CSP é globalmente consistente se, para cada subconjunto de variáveis e para 
+cada atribuição possível a esse subconjunto que satisfaz as restrições sobre 
+ele, é possível estender essa atribuição ao resto das variáveis sem violar 
+nenhuma restrição. É o tipo mais forte de consistência, mas também o mais 
+difícil de alcançar e verificar. Geralmente, não é prático verificar a 
+consistência global para problemas grandes, mas é um objetivo desejável.</p>
+<h3 id="consistencia-k-k-consistency">Consistência K (k-Consistency)</h3>
+<p>Um CSP é k-consistente se para qualquer conjunto de (k-1) variáveis e uma 
+atribuição consistente a essas variáveis, a extensão dessa atribuição a uma 
+k-ésima variável é consistente com as restrições do CSP. A consistência k 
+oferece um meio-termo entre a simplicidade da consistência de nó/arco e a 
+complexidade da consistência global. A consistência 2, por exemplo, é 
+equivalente à consistência de arco.</p>
+<h2 id="algoritmos">Algoritmos</h2>
+<h3 id="backtracking">Backtracking</h3>
+<p>É o algoritmo mais básico e direto para resolver CSPs. Ele tenta atribuir 
+valores a cada variável sequencialmente e volta atrás (backtrack) quando uma 
+restrição é violada. Utilizado em problemas de CSP mais simples e é a base para 
+muitos outros algoritmos mais sofisticados.</p>
+<h4 id="exemplo-em-python">Exemplo em Python:</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">backtrack</span><span class="p">(</span><span class="n">assignment</span><span class="p">,</span> <span class="n">csp</span><span class="p">):</span>
+    <span class="c1"># Verifica se a atribuição está completa</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">assignment</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">csp</span><span class="o">.</span><span class="n">variables</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">assignment</span>
+
+    <span class="c1"># Seleciona uma variável ainda não atribuída</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">select_unassigned_variable</span><span class="p">(</span><span class="n">assignment</span><span class="p">,</span> <span class="n">csp</span><span class="p">)</span>
+
+    <span class="c1"># Testa todos os valores possíveis para a variável</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">var</span><span class="p">]:</span>
+        <span class="c1"># Checa se a atribuição atual é consistente com as restrições do CSP</span>
+        <span class="k">if</span> <span class="n">is_consistent</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">assignment</span><span class="p">,</span> <span class="n">csp</span><span class="p">):</span>
+            <span class="n">assignment</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># Atribui o valor à variável</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">backtrack</span><span class="p">(</span><span class="n">assignment</span><span class="p">,</span> <span class="n">csp</span><span class="p">)</span>  <span class="c1"># Continua recursivamente</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">result</span>  <span class="c1"># Retorna a solução, se encontrada</span>
+            <span class="n">assignment</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>  <span class="c1"># Caso contrário, remove a atribuição e tenta outra</span>
+
+    <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Retorna False se nenhuma atribuição válida for encontrada</span>
+</code></pre></div>
+<h3 id="algoritmo-de-arc-consistency-ac-3">Algoritmo de Arc Consistency (AC-3)</h3>
+<p>AC-3 é um algoritmo para alcançar a consistência de arco em CSPs. Ele examina 
+sistematicamente pares de variáveis e elimina valores inconsistentes dos seus 
+domínios. Comumente usado como um pré-processamento em CSPs para reduzir o 
+espaço de busca antes de aplicar algoritmos como backtracking.</p>
+<h4 id="exemplo-em-python_1">Exemplo em Python:</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ac3</span><span class="p">(</span><span class="n">csp</span><span class="p">):</span>
+    <span class="c1"># Inicializa a fila com todos os arcos do CSP</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Xi</span><span class="p">,</span> <span class="n">Xj</span><span class="p">)</span> <span class="k">for</span> <span class="n">Xi</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">variables</span> <span class="k">for</span> <span class="n">Xj</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">Xi</span><span class="p">]]</span>
+
+    <span class="c1"># Processa cada arco na fila</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">Xi</span><span class="p">,</span> <span class="n">Xj</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Remove um arco da fila</span>
+
+        <span class="c1"># Revisa o arco e atualiza o domínio de Xi se necessário</span>
+        <span class="k">if</span> <span class="n">revise</span><span class="p">(</span><span class="n">csp</span><span class="p">,</span> <span class="n">Xi</span><span class="p">,</span> <span class="n">Xj</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">Xi</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Retorna False se o domínio de Xi ficar vazio</span>
+
+            <span class="c1"># Adiciona novamente à fila todos os arcos que afetam Xi</span>
+            <span class="k">for</span> <span class="n">Xk</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">Xi</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">Xk</span> <span class="o">!=</span> <span class="n">Xj</span><span class="p">:</span>
+                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">Xk</span><span class="p">,</span> <span class="n">Xi</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Retorna True se todos os arcos forem consistentes</span>
+
+<span class="k">def</span> <span class="nf">revise</span><span class="p">(</span><span class="n">csp</span><span class="p">,</span> <span class="n">Xi</span><span class="p">,</span> <span class="n">Xj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Revisa o domínio de Xi para garantir consistência com Xj.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        csp: O problema de CSP, contendo variáveis, domínios e restrições.</span>
+<span class="sd">        Xi: A variável cujo domínio está sendo revisado.</span>
+<span class="sd">        Xj: A variável vizinha de Xi.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True se houver alguma revisão no domínio de Xi, False caso contrário.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">revised</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">Xi</span><span class="p">][:]:</span>  <span class="c1"># Copia do domínio para evitar modificar durante iteração</span>
+        <span class="c1"># Se não existe nenhum valor em Xj que satisfaça a restrição com x, remove x do domínio de Xi</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_satisfied</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">csp</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="n">Xi</span><span class="p">,</span> <span class="n">Xj</span><span class="p">])</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">Xj</span><span class="p">]):</span>
+            <span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">Xi</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">revised</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">revised</span>
+
+<span class="k">def</span> <span class="nf">is_satisfied</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">constraint</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Verifica se a restrição entre x e y é satisfeita.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x: Valor da variável Xi.</span>
+<span class="sd">        y: Valor da variável Xj.</span>
+<span class="sd">        constraint: A restrição entre Xi e Xj.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True se a restrição é satisfeita, False caso contrário.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Implementação específica da restrição</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="min-conflicts">Min-conflicts</h3>
+<p>Um algoritmo de busca local que seleciona uma variável que está em conflito e 
+muda seu valor para minimizar o número de conflitos. 
+Particularmente eficaz em problemas com uma grande densidade de restrições. 
+É útil em CSPs de grande escala onde uma solução ótima não é necessária, mas 
+uma solução "boa o suficiente" é aceitável.</p>
+<h4 id="exemplo-em-python_2">Exemplo em Python:</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">min_conflicts</span><span class="p">(</span><span class="n">csp</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">conflicts</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># Conta o número de conflitos se &#39;var&#39; for atribuído a &#39;value&#39;</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">csp</span><span class="o">.</span><span class="n">assignment</span><span class="p">[</span><span class="n">neighbor</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_steps</span><span class="p">):</span>
+        <span class="c1"># Identifica todas as variáveis que estão em conflito</span>
+        <span class="n">conflicted</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">csp</span><span class="o">.</span><span class="n">variables</span> <span class="k">if</span> <span class="n">conflicts</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">csp</span><span class="o">.</span><span class="n">assignment</span><span class="p">[</span><span class="n">var</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Se não há conflitos, a solução atual é retornada</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">conflicted</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">csp</span><span class="o">.</span><span class="n">assignment</span>
+
+        <span class="c1"># Escolhe aleatoriamente uma variável em conflito</span>
+        <span class="n">var</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">conflicted</span><span class="p">)</span>
+
+        <span class="c1"># Escolhe o valor para &#39;var&#39; que minimiza o número de conflitos</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">val</span><span class="p">:</span> <span class="n">conflicts</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+
+        <span class="c1"># Atribui o valor escolhido a &#39;var&#39;</span>
+        <span class="n">csp</span><span class="o">.</span><span class="n">assignment</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># Retorna None se nenhuma solução for encontrada dentro do limite de passos</span>
+
+<span class="c1"># Nota: Este é um exemplo conceitual. A implementação real exigiria uma estrutura de dados CSP mais detalhada.</span>
+</code></pre></div>
+<hr />
+<h2 id="estrutura-de-problemas">Estrutura de Problemas</h2>
+<p><strong>Arvore de Busca e Pruning</strong>: Utilizando árvores de busca para representar o 
+espaço de busca, podemos dizer que os algoritmos de CSP são mais eficientes que os
+algoritmos de procura tradicionais, pois eles conseguem realizar podas
+eficientes na árvore de busca. Algoritmos de CSP são eficientes em 
+identificar e descartar ramos da árvore de busca que não podem levar a 
+soluções válidas. Isso é feito por meio da verificação de restrições: se uma 
+atribuição parcial viola uma restrição, não há necessidade de explorar mais 
+adiante nesse ramo.</p>
+<p>A afirmação de que "algoritmos baseados em CSPs são, na prática, mais
+eficientes que algoritmos de procura tradicionais" pode ser considerada 
+correta em muitos contextos, especialmente em relação à capacidade desses 
+algoritmos de realizar podas eficientes na árvore de busca, como no exemplo 
+do problema de coloração do mapa da Austrália. Vamos analisar a afirmação em 
+detalhes:</p>
+<p><strong>Comparação com Procura Tradicional</strong>: Em algoritmos de busca tradicionais,
+como busca em profundidade ou largura, todas as possíveis combinações teriam 
+que ser exploradas de maneira mais uniforme, sem a vantagem de eliminar opções 
+com base na violação de restrições.</p>
+<p>Portanto, é correto dizer que os algoritmos de CSP, ao 
+aplicarem restrições de maneira eficaz, podem ser mais eficientes do que 
+métodos de busca tradicionais, especialmente em problemas onde as restrições 
+desempenham um papel crucial na definição de soluções válidas.
+Essa eficiência em CSPs é particularmente notável em problemas complexos e de 
+grande escala, onde a habilidade de reduzir rapidamente o espaço de busca é 
+essencial para encontrar soluções em um tempo razoável.</p>
+<h2 id="discussoes">Discussões</h2>
+<p>Um algoritmo não discutido em sala de aula, e que é relacionado aos algoritmos
+discutidos, temos o AC-6:</p>
+<h3 id="algoritmo-ac-6">Algoritmo AC-6</h3>
+<p>O AC-3 e o AC-6 são algoritmos projetados para impor a consistência de arco em 
+problemas de satisfação de restrições (CSPs), mas diferem em eficiência e 
+complexidade. O AC-3, mais simples de implementar, revisa todos os arcos que 
+incidem sobre uma variável cada vez que um valor é removido de seu domínio, o 
+que pode levar a revisões repetitivas e desnecessárias. Em contraste, o AC-6, 
+mais complexo na implementação, utiliza estruturas de dados auxiliares para 
+rastrear especificamente quais valores são consistentes entre as variáveis, 
+reduzindo assim o número total de revisões. Isso torna o AC-6 geralmente mais 
+rápido do que o AC-3, especialmente em CSPs com uma grande quantidade de 
+restrições e domínios extensos, pois minimiza o trabalho redundante e melhora a 
+eficiência global do processo de busca por consistência.</p>
+<p>Implementar o algoritmo AC-6 é consideravelmente mais complexo do que AC-3 
+devido à necessidade de manter estruturas de dados adicionais para rastrear as 
+relações de suporte entre os valores das variáveis. No entanto, posso fornecer 
+um esqueleto de como o algoritmo AC-6 seria estruturado em Python, com 
+comentários que explicam cada parte do processo.</p>
+<p>Simplificando o algoritmo AC-6, ele funciona da seguinte maneira... Exemplo em 
+python:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">AC6</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csp</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">csp</span> <span class="o">=</span> <span class="n">csp</span>  <span class="c1"># CSP problem with variables, domains, and constraints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Queue of arcs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supports</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Support structure to keep track of consistent values</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Initialize the support structure and queue</span>
+        <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">xj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">xi</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">]:</span>
+                    <span class="c1"># Initialize supports to keep track of values in xj&#39;s domain that are consistent with a</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">supports</span><span class="p">[(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xj</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xj</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">is_consistent</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xj</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports</span><span class="p">[(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xj</span><span class="p">)]:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># No solution exists</span>
+                <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xj</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">is_consistent</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xj</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">]):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xj</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>  <span class="c1"># Add arc to queue if b has no support</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">revise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">xj</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="c1"># Revise the domain of xi based on the value b of xj</span>
+        <span class="n">revised</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">][:]:</span>  <span class="c1"># Iterate over a copy to allow removal</span>
+            <span class="k">if</span> <span class="n">b</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports</span><span class="p">[(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xj</span><span class="p">)]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># Remove a if it is not supported by b</span>
+                <span class="n">revised</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xi</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># No solution exists</span>
+        <span class="k">return</span> <span class="n">revised</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Main loop of AC-6</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># No solution exists</span>
+
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+            <span class="n">xj</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">revise</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">xj</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">xk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">[</span><span class="n">xi</span><span class="p">]:</span>
+                    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">csp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="n">xk</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports</span><span class="p">[(</span><span class="n">xk</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">xi</span><span class="p">)]:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">xi</span><span class="p">,</span> <span class="n">xk</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>  <span class="c1"># Add arc to queue if a loses support</span>
+
+        <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># CSP is arc consistent</span>
+</code></pre></div>
+Notem que este código é um esboço e não funcionará sem uma implementação 
+completa das estruturas de dados de CSP e das funções de verificação de 
+consistência. Em um sistema real, implementar o AC-6, exigiria uma compreensão 
+profunda do problema de CSP em questão e uma implementação detalhada das 
+restrições e da lógica de suporte.</p>
+<h2 id="projetos-e-problemas">Projetos e problemas</h2>
+<h3 id="problema-de-agendamento-de-eventos">Problema de agendamento de eventos</h3>
+<p>Imagine um problema onde temos vários eventos e temos que agendar esses eventos
+em um número definido de salas disponíveis em uma universidade. 
+Cada evento tem um horário de início e fim. Então precisamos definir quais
+eventos ocorrerão em quais salas.</p>
+<p>Para resolver esse problema, podemos usar algoritmos de CSP; Em modos práticos
+podemos utilizar uma biblioteca Python chamada <code>python-constraint</code> a fim de
+definir variáveis, domínios e restrições.</p>
+<p>Essa biblioteca simplifica a confecção de um script que resolva uma CSP; 
+Utilizando os algoritmos de Backtracking, Recursive backtracking e Min-Conflits
+essa biblioteca resolve problemas de domínios finitos.</p>
+<p>Para demonstrar a resolução do problema, escrevi um script Python em português
+com comentários em linha e Docstrings para deixar o mais explícito possível o
+funcionamento do código.</p>
+<p>O trecho de código abaixo é a parte principal da resolução da CSP no projeto:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">resolver_agendamento</span><span class="p">(</span><span class="n">eventos</span><span class="p">,</span> <span class="n">num_salas</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Resolve o problema de agendamento de eventos em salas.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        eventos (dict): Dicionário com os eventos e seus horários.</span>
+<span class="sd">        num_salas (int): Número de salas disponíveis.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Dicionário com os eventos e seus horários nas respectivas salas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">Problem</span><span class="p">()</span>
+
+    <span class="c1"># Adicionando eventos como variáveis com seus domínios (salas e horários)</span>
+    <span class="k">for</span> <span class="n">evento</span><span class="p">,</span> <span class="n">horario</span> <span class="ow">in</span> <span class="n">eventos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">inicio</span><span class="p">,</span> <span class="n">fim</span> <span class="o">=</span> <span class="n">horario</span>
+        <span class="n">horarios_possiveis</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">sala</span><span class="p">,</span> <span class="p">(</span><span class="n">inicio</span><span class="p">,</span> <span class="n">fim</span><span class="p">))</span> <span class="k">for</span> <span class="n">sala</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_salas</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">problem</span><span class="o">.</span><span class="n">addVariable</span><span class="p">(</span><span class="n">evento</span><span class="p">,</span> <span class="n">horarios_possiveis</span><span class="p">)</span>
+
+    <span class="c1"># Adicionando restrição de não sobreposição</span>
+    <span class="k">for</span> <span class="n">evento1</span> <span class="ow">in</span> <span class="n">eventos</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">evento2</span> <span class="ow">in</span> <span class="n">eventos</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">evento1</span> <span class="o">&lt;</span> <span class="n">evento2</span><span class="p">:</span>
+                <span class="n">problem</span><span class="o">.</span><span class="n">addConstraint</span><span class="p">(</span><span class="n">sem_sobreposicao</span><span class="p">,</span> <span class="p">(</span><span class="n">evento1</span><span class="p">,</span> <span class="n">evento2</span><span class="p">))</span>
+
+    <span class="c1"># Encontrando uma solução</span>
+    <span class="k">return</span> <span class="n">problem</span><span class="o">.</span><span class="n">getSolution</span><span class="p">()</span>
+</code></pre></div>
+<p>É fácil ver como a biblioteca simplifica a resolução de CSPs.
+Para um engenheiro de software, em cenários de mundo real, o uso de bibliotecas
+que agilizam o desenvolvimento e permitem que o engenheiro se concentre mais
+na lógica do problema do que na implementação de algoritmos é extremamente
+vantajoso.</p>
+<p>A restrição principal do problema é que os eventos não podem ser sobrepostos.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sem_sobreposicao</span><span class="p">(</span><span class="n">evento1</span><span class="p">,</span> <span class="n">evento2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verifica se dois eventos não estão sobrepostos.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        evento1 (tuple): Tupla com o nome do evento e seu horário.</span>
+<span class="sd">        evento2 (tuple): Tupla com o nome do evento e seu horário.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True se não há sobreposição, False caso contrário.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sala1</span><span class="p">,</span> <span class="p">(</span><span class="n">inicio1</span><span class="p">,</span> <span class="n">fim1</span><span class="p">)</span> <span class="o">=</span> <span class="n">evento1</span>
+    <span class="n">sala2</span><span class="p">,</span> <span class="p">(</span><span class="n">inicio2</span><span class="p">,</span> <span class="n">fim2</span><span class="p">)</span> <span class="o">=</span> <span class="n">evento2</span>
+    <span class="k">return</span> <span class="n">sala1</span> <span class="o">!=</span> <span class="n">sala2</span> <span class="ow">or</span> <span class="n">fim1</span> <span class="o">&lt;=</span> <span class="n">inicio2</span> <span class="ow">or</span> <span class="n">inicio1</span> <span class="o">&gt;=</span> <span class="n">fim2</span>
+</code></pre></div>
+<p>No <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio">repositório do respositório do presente documento</a>,
+é possível encontrar o código na pasta <code>csp</code>. <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio/tree/main/csp">[Link para a pasta do projeto]</a></p>
+<p>Basta executar <code>python main.py</code> para ver o resultado do script.
+Utilizei <code>pygame</code> para renderizar o resultado do script em uma janela.</p>
+<p><img alt="Prinscreen CSP Problem" src="../image-1.png" />
+<img alt="Another Prinscreen" src="../image-2.png" /></p>
+<p>O problema lê o arquivo json mais novo na pasta do algoritmo e calcula o resultado.
+Então é possível gerar novos problemas e resolver com o script.
+Basta executar <code>python generate_events.py</code> para gerar um novo json com as novas
+condições de eventos.</p>
+<h2 id="bibliografia">Bibliografia</h2>
+<p>https://folivetti.github.io/courses/IA/PDF/Aula04.pdf</p>
+<p>https://en.wikipedia.org/wiki/AC-3_algorithm</p>
+<p>https://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-3.pdf</p>
+<p>https://www.cs.ubc.ca/~kevinlb/teaching/cs322%20-%202009-10/Lectures/CSP3.pdf</p>
+<p>https://ktiml.mff.cuni.cz/~bartak/constraints/stochastic.html</p>
+<p>https://www.slideserve.com/asis/maintaining-arc-consistency-ac-6-powerpoint-ppt-presentation</p>
+<p>https://www.researchgate.net/publication/220565739_Propositional_Satisfiability_and_Constraint_Programming_A_comparative_survey</p>
+<p>https://pypi.org/project/python-constraint/</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

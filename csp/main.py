@@ -12,6 +12,15 @@ X_SCALE = 95
 
 
 def encontrar_arquivo_json_mais_recente(diretorio):
+    """
+    Encontra o arquivo JSON mais recente em um diretório.
+    
+    Args:
+        diretorio (str): Diretório onde os arquivos JSON estão.
+        
+    Returns:
+        str: Nome do arquivo JSON mais recente.
+    """
     # Lista todos os arquivos no diretório e filtra por arquivos .json
     arquivos_json = [
         arquivo
@@ -29,15 +38,33 @@ def encontrar_arquivo_json_mais_recente(diretorio):
     return arquivos_json[0] if arquivos_json else None
 
 
-# Função para adicionar restrição de não sobreposição de eventos
 def sem_sobreposicao(evento1, evento2):
+    """
+    Verifica se dois eventos não estão sobrepostos.
+    
+    Args:
+        evento1 (tuple): Tupla com o nome do evento e seu horário.
+        evento2 (tuple): Tupla com o nome do evento e seu horário.
+    
+    Returns:
+        bool: True se não há sobreposição, False caso contrário.
+    """
     sala1, (inicio1, fim1) = evento1
     sala2, (inicio2, fim2) = evento2
     return sala1 != sala2 or fim1 <= inicio2 or inicio1 >= fim2
 
 
-# Função principal para resolver o problema de agendamento
 def resolver_agendamento(eventos, num_salas=4):
+    """
+    Resolve o problema de agendamento de eventos em salas.
+    
+    Args:
+        eventos (dict): Dicionário com os eventos e seus horários.
+        num_salas (int): Número de salas disponíveis.
+    
+    Returns:
+        dict: Dicionário com os eventos e seus horários nas respectivas salas.
+    """
     problem = Problem()
 
     # Adicionando eventos como variáveis com seus domínios (salas e horários)
@@ -59,7 +86,18 @@ def resolver_agendamento(eventos, num_salas=4):
 
 
 def quebrar_texto(texto, fonte, max_largura):
-    """Quebra o texto em várias linhas para que caiba na largura máxima especificada."""
+    """
+    Quebra o texto em várias linhas para que caiba na largura máxima 
+    especificada.
+    
+    Args:
+        texto (str): Texto a ser quebrado.
+        fonte (pygame.font.Font): Fonte do texto.
+        max_largura (int): Largura máxima da linha.
+    
+    Returns:
+        list: Lista de strings com o texto quebrado em várias linhas.    
+    """
     palavras = texto.split(" ")
     linhas = []
     linha_atual = ""
@@ -76,8 +114,18 @@ def quebrar_texto(texto, fonte, max_largura):
     return linhas
 
 
-# Função para desenhar a linha do tempo
 def desenhar_linha_tempo(tela, eventos, num_salas=4):
+    """
+    Desenha a linha do tempo na tela.
+    
+    Args:
+        tela (pygame.Surface): Superfície da janela.
+        eventos (dict): Dicionário com os eventos e seus horários.
+        num_salas (int): Número de salas disponíveis.
+    
+    Returns:
+        None
+    """    
     altura_offset = altura * 0.1
     tela.fill(branco)
     altura_sala = (altura - altura_offset) // num_salas
@@ -138,9 +186,11 @@ def desenhar_linha_tempo(tela, eventos, num_salas=4):
 
 
 if __name__ == "__main__":
+    # Define numero de salas e diretorio dos arquivos JSON
     num_salas = 4
     diretorio_json = "."
 
+    # Encontra o arquivo JSON mais recente
     arquivo_json_mais_recente = encontrar_arquivo_json_mais_recente(
         diretorio_json
     )
@@ -158,6 +208,7 @@ if __name__ == "__main__":
     else:
         print("Nenhum arquivo JSON encontrado.")
 
+    # Resolvendo o problema de agendamento
     solucao = resolver_agendamento(eventos_dict, num_salas=num_salas)
 
     # Dados dos eventos

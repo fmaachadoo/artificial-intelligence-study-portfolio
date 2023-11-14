@@ -13,6 +13,8 @@
       
       
       
+        <link rel="prev" href="../portfolio_2_projects/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Problemas de Satisfação de Condições (CSPs) - IA Portfolio</title>
+        <title>CSPs (Portfolio 3) - IA Portfolio</title>
       
     
     
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Problemas de Satisfação de Condições (CSPs)
+              CSPs (Portfolio 3)
             
           </span>
         </div>
@@ -440,6 +442,343 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CSPs (Portfolio 3)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    CSPs (Portfolio 3)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#impressoes-iniciais" class="md-nav__link">
+    Impressões iniciais
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representacao-atomica-vs-fatorada" class="md-nav__link">
+    Representação Atômica vs Fatorada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definindo-problemas-de-satisfacao-de-condicoes" class="md-nav__link">
+    Definindo Problemas de Satisfação de Condições
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-condicoes" class="md-nav__link">
+    Tipos de Condições
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Condições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#condicoes-necessarias" class="md-nav__link">
+    Condições necessárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-unarias" class="md-nav__link">
+    Restrições Unárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-binarias" class="md-nav__link">
+    Restrições Binárias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-de-alta-ordem-ternaria" class="md-nav__link">
+    Restrições de Alta Ordem (Ternária+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricoes-globais" class="md-nav__link">
+    Restrições Globais
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicoes-de-preferencia" class="md-nav__link">
+    Condições de preferência
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propagacao-de-condicao" class="md-nav__link">
+    Propagação de condição
+  </a>
+  
+    <nav class="md-nav" aria-label="Propagação de condição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionamento" class="md-nav__link">
+    Funcionamento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-no-desenvolvimento-de-software" class="md-nav__link">
+    Impacto no Desenvolvimento de Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistencia" class="md-nav__link">
+    Consistência
+  </a>
+  
+    <nav class="md-nav" aria-label="Consistência">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-no" class="md-nav__link">
+    Consistência de Nó
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-arco" class="md-nav__link">
+    Consistência de Arco
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-de-trajeto" class="md-nav__link">
+    Consistência de Trajeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-global" class="md-nav__link">
+    Consistência Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia-k-k-consistency" class="md-nav__link">
+    Consistência K (k-Consistency)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmos" class="md-nav__link">
+    Algoritmos
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backtracking" class="md-nav__link">
+    Backtracking
+  </a>
+  
+    <nav class="md-nav" aria-label="Backtracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-de-arc-consistency-ac-3" class="md-nav__link">
+    Algoritmo de Arc Consistency (AC-3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmo de Arc Consistency (AC-3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python_1" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-conflicts" class="md-nav__link">
+    Min-conflicts
+  </a>
+  
+    <nav class="md-nav" aria-label="Min-conflicts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python_2" class="md-nav__link">
+    Exemplo em Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-problemas" class="md-nav__link">
+    Estrutura de Problemas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussoes" class="md-nav__link">
+    Discussões
+  </a>
+  
+    <nav class="md-nav" aria-label="Discussões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmo-ac-6" class="md-nav__link">
+    Algoritmo AC-6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projetos-e-problemas" class="md-nav__link">
+    Projetos e problemas
+  </a>
+  
+    <nav class="md-nav" aria-label="Projetos e problemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-de-agendamento-de-eventos" class="md-nav__link">
+    Problema de agendamento de eventos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografia
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 

@@ -222,7 +222,10 @@ class Player:
         return len(self.cards) > 0
     
     def choose_target(self, players):
-        return random.choice(players)
+        while True:
+            chosen = random.choice(players)
+            if chosen != self and chosen.is_alive():
+                return chosen
 
     def play_action(self, action, target=None):
         if target:
@@ -438,6 +441,8 @@ class CoupGame:
             print('------------------\n')
                 
             self.next_turn()
+        else:
+            print(f"{self.players[0]} won!")
 
     def take_turn(self, player):
         target = None

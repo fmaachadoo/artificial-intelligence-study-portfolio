@@ -1,0 +1,1725 @@
+Dealing cards...
+Bob's turn
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has []
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Bob Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 5 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Duke, Captain] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+The action was Blocked by [32mAI Kung Lao[37m
+The action was Blocked by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has []
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 5 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Duke, Captain] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Bob because it has 5 coins
+[32mAI Guilherme[37m decides to Steal against Bob
+Steal was Successful by Bob
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Guilherme[37m acknowledged: Bob was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has []
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Kung Lao[37m acknowledged: Bob was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Duke, Captain] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m is targeting Bob because it has 3 coins
+[32mAI Kung Lao[37m decides to Steal against Bob
+Steal was Successful by Bob
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Kung Lao[37m Steal Bob was Successful
+[32mAI Guilherme[37m acknowledged: Bob was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Kung Lao[37m Steal Bob was Successful
+[32mAI Kung Lao[37m acknowledged: Bob was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 1 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Captain, Duke] cards
+------------------
+
+Bob's turn
+Bob doesn't have enough coins to assassinate
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Bob Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 4 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Captain, Duke] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Shirley Income was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 4 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Captain, Duke] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Bob because it has 4 coins
+[32mAI Guilherme[37m decides to Steal against Bob
+Steal was Successful by Bob
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Guilherme[37m acknowledged: Bob was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Kung Lao[37m acknowledged: Bob was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 2 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Captain, Contessa] cards
+[32mAI Kung Lao[37m has 2 coins and [Captain, Duke] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m is targeting Shirley because it has 3 coins
+[32mAI Kung Lao[37m decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 2 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Captain, Contessa] cards
+[32mAI Kung Lao[37m has 5 coins and [Duke, Captain] cards
+------------------
+
+Bob's turn
+Bob doesn't have enough coins to assassinate
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Bob Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 5 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Captain, Contessa] cards
+[32mAI Kung Lao[37m has 5 coins and [Duke, Captain] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+The action was Blocked by [32mAI Kung Lao[37m
+The action was Blocked by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 5 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Captain, Contessa] cards
+[32mAI Kung Lao[37m has 5 coins and [Duke, Captain] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Bob because it has 5 coins
+[32mAI Guilherme[37m decides to Steal against Bob
+Steal was Successful by Bob
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Guilherme[37m acknowledged: Bob was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Kung Lao[37m acknowledged: Bob was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 5 coins and [Duke, Captain] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m is targeting Bob because it has 3 coins
+[32mAI Kung Lao[37m decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Steal,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 8 coins and [Duke, Captain] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against [32mAI Kung Lao[37m
+Assassinate was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m is removing Steal knowledge from [32mAI Kung Lao[37m
+[32mAI Guilherme[37m is removing Block Stealing knowledge from [32mAI Kung Lao[37m
+[32mAI Guilherme[37m never saw [32mAI Kung Lao[37m Block Stealing
+[32mAI Guilherme[37m acknowledged: Bob Block Stealing [32mAI Kung Lao[37m was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke']
+[0m
+[02m
+[32mAI Kung Lao[37m is removing Steal knowledge from [32mAI Kung Lao[37m
+[32mAI Kung Lao[37m is removing Block Stealing knowledge from [32mAI Kung Lao[37m
+[32mAI Kung Lao[37m never saw [32mAI Kung Lao[37m Block Stealing
+[32mAI Kung Lao[37m acknowledged: Bob Block Stealing [32mAI Kung Lao[37m was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 8 coins and [Duke] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+The action was Blocked by [32mAI Kung Lao[37m
+The action was Blocked by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Shirley Foreign Aid was Blocked
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 8 coins and [Duke] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 3 coins
+[32mAI Guilherme[37m decides to Steal against Shirley
+Steal was Successful by Shirley
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Shirley was Successful
+[32mAI Guilherme[37m acknowledged: Shirley was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Shirley was Successful
+[32mAI Kung Lao[37m acknowledged: Shirley was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 8 coins and [Duke] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m is targeting [32mAI Guilherme[37m because it has 2 coins
+[32mAI Kung Lao[37m decides to Coup against [32mAI Guilherme[37m
+[32mAI Guilherme[37m lost Captain card
+Coup was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m is removing Steal knowledge from [32mAI Guilherme[37m
+[32mAI Guilherme[37m is removing Block Stealing knowledge from [32mAI Guilherme[37m
+[32mAI Guilherme[37m never saw [32mAI Guilherme[37m Block Stealing
+[32mAI Guilherme[37m acknowledged: [32mAI Kung Lao[37m Block Stealing [32mAI Guilherme[37m was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m is removing Steal knowledge from [32mAI Guilherme[37m
+[32mAI Kung Lao[37m is removing Block Stealing knowledge from [32mAI Guilherme[37m
+[32mAI Kung Lao[37m never saw [32mAI Guilherme[37m Block Stealing
+[32mAI Kung Lao[37m acknowledged: [32mAI Kung Lao[37m Block Stealing [32mAI Guilherme[37m was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 1 coins and [Duke] cards
+------------------
+
+Bob's turn
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Bob Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 1 coins and [Duke] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: Shirley Income was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 1 coins and [Duke] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Bob because it has 3 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Income,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 1 coins and [Duke] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m is targeting Bob because it has 3 coins
+[32mAI Kung Lao[37m decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m played Tax,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Duke
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Duke', 'Captain']
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Kung Lao[37m Tax was Successful
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Kung Lao[37m inferred Bob has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Kung Lao[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Income,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 4 coins and [Duke] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against [32mAI Kung Lao[37m
+Assassinate was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m is removing Tax knowledge from [32mAI Kung Lao[37m
+[32mAI Guilherme[37m is removing Block Foreign Aid knowledge from [32mAI Kung Lao[37m
+[32mAI Guilherme[37m never saw [32mAI Kung Lao[37m Block Foreign Aid
+[32mAI Guilherme[37m acknowledged: Bob Block Foreign Aid [32mAI Kung Lao[37m was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 4 coins and [] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 4 coins and [] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 3 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Kung Lao[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Kung Lao[37m blocked Stealing,[32mAI Guilherme[37m inferred [32mAI Kung Lao[37m has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has ['Captain']
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+[32mAI Kung Lao[37m has 4 coins and [] cards
+------------------
+
+[32mAI Kung Lao[37m's turn
+[32mAI Kung Lao[37m's dead!
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 5 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 5 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 0 coins and [Assassin, Duke] cards
+Shirley has 5 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 5 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 5 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 5 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 7 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 5 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 7 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 7 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 6 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Tax
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Tax was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+Since Bob blocked Foreign Aid,[32mAI Guilherme[37m inferred Bob has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[0m
+
+------------------
+Bob has 6 coins and [Assassin, Duke] cards
+Shirley has 7 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 6 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Coup against Bob
+Bob lost Duke card
+Coup was Successful by Bob
+[02m
+[32mAI Guilherme[37m is removing Tax knowledge from Bob
+[32mAI Guilherme[37m is removing Block Foreign Aid knowledge from Bob
+[32mAI Guilherme[37m acknowledged: Shirley Block Foreign Aid Bob was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 0 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 6 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 0 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 0 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 7 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against Shirley
+Assassinate was Blocked by Shirley
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate Shirley was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 0 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 7 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 7 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 1 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 8 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against [32mAI Guilherme[37m
+Assassinate was Blocked by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate [32mAI Guilherme[37m was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 1 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 8 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 8 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 2 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 9 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against Shirley
+Assassinate was Blocked by Shirley
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate Shirley was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 9 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 9 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 3 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 10 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against Shirley
+Assassinate was Blocked by Shirley
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate Shirley was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 3 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 10 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 5 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 10 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 5 coins
+[32mAI Guilherme[37m has 10+ coins and is obligated to coup
+[32mAI Guilherme[37m decides to Coup against Shirley
+Shirley lost Contessa card
+Coup was Successful by Shirley
+[02m
+[32mAI Guilherme[37m is removing Block Assassination knowledge from Shirley
+[32mAI Guilherme[37m never saw Shirley Block Assassination
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Block Assassination Shirley was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 5 coins and [Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against Shirley
+Assassinate was Blocked by Shirley
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate Shirley was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 5 coins and [Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 7 coins and [Contessa] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 7 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 7 coins and [Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob decides to Assassinate against [32mAI Guilherme[37m
+Assassinate was Blocked by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Bob Assassinate [32mAI Guilherme[37m was Blocked
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Assassinate,[32mAI Guilherme[37m inferred Bob has an Assassin
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Assassin', 'Captain']
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke']
+[0m
+
+------------------
+Bob has 6 coins and [Assassin] cards
+Shirley has 7 coins and [Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Coup against Bob
+Bob lost Assassin card
+Coup was Successful by Bob
+[02m
+[32mAI Guilherme[37m is removing Assassinate knowledge from Bob
+[32mAI Guilherme[37m acknowledged: Shirley Assassinate Bob was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Captain']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Bob has 6 coins and [] cards
+Shirley has 0 coins and [Contessa] cards
+[32mAI Guilherme[37m has 4 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 0 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+Since Bob blocked Stealing,[32mAI Guilherme[37m inferred Bob has a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Captain']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Bob has 6 coins and [] cards
+Shirley has 0 coins and [Contessa] cards
+[32mAI Guilherme[37m has 5 coins and [Contessa] cards
+------------------
+
+Bob's turn
+Bob's dead!
+
+------------------
+Shirley has 0 coins and [Contessa] cards
+[32mAI Guilherme[37m has 5 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 0 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 0 coins and [Contessa] cards
+[32mAI Guilherme[37m has 6 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 2 coins and [Contessa] cards
+[32mAI Guilherme[37m has 6 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 2 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 2 coins and [Contessa] cards
+[32mAI Guilherme[37m has 7 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 3 coins and [Contessa] cards
+[32mAI Guilherme[37m has 7 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 3 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 3 coins and [Contessa] cards
+[32mAI Guilherme[37m has 8 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 4 coins and [Contessa] cards
+[32mAI Guilherme[37m has 8 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 4 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 4 coins and [Contessa] cards
+[32mAI Guilherme[37m has 9 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 6 coins and [Contessa] cards
+[32mAI Guilherme[37m has 9 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 6 coins
+[32mAI Guilherme[37m decides to Income
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Income was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 6 coins and [Contessa] cards
+[32mAI Guilherme[37m has 10 coins and [Contessa] cards
+------------------
+
+Shirley's turn
+Shirley decides to Foreign Aid
+No one blocked the action
+The action was Successful by [32mAI Guilherme[37m
+[02m
+[32mAI Guilherme[37m acknowledged: Shirley Foreign Aid was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 8 coins and [Contessa] cards
+[32mAI Guilherme[37m has 10 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Shirley because it has 8 coins
+[32mAI Guilherme[37m has 10+ coins and is obligated to coup
+[32mAI Guilherme[37m decides to Coup against Shirley
+Shirley lost Contessa card
+Coup was Successful by Shirley
+[02m
+[32mAI Guilherme[37m is removing Block Assassination knowledge from Shirley
+[32mAI Guilherme[37m never saw Shirley Block Assassination
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Block Assassination Shirley was Successful
+[32mAI Guilherme[37m is predicting the game
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley played Assassinate,[32mAI Guilherme[37m inferred Shirley has an Assassin
+Since Shirley played Income,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+Since Shirley blocked Foreign Aid,[32mAI Guilherme[37m inferred Shirley has a Duke
+Since Shirley was stolen,[32mAI Guilherme[37m inferred Shirley doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has ['Duke', 'Assassin']
+[0m
+
+------------------
+Shirley has 8 coins and [] cards
+[32mAI Guilherme[37m has 3 coins and [Contessa] cards
+------------------
+
+[32mAI Guilherme[37m won!

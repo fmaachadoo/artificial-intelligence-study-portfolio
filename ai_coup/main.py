@@ -1,5 +1,6 @@
 import random
 import logging
+import time
 
 from pprint import pprint
 
@@ -37,7 +38,7 @@ class ForeignAid(Action):
 
         if target:
             status = reacting_player.react_to_action(
-                player, ForeignAid, reacting_player
+                player=player, action=ForeignAid, target=reacting_player
             )
             if status == "Blocked":
                 return status
@@ -88,7 +89,7 @@ class Assassinate(Action):
         status = "Successful"
 
         if target:
-            status = target.react_to_action(player, Assassinate, target)
+            status = target.react_to_action(player=player, action=Assassinate, target=target)
             if status == "Blocked":
                 return status, None
 
@@ -110,7 +111,7 @@ class Steal(Action):
         status = "Successful"
 
         if target:
-            status = target.react_to_action(player, Steal, target)
+            status = target.react_to_action(player=player, action=Steal, target=target)
             if status == "Blocked":
                 return status, None
 
@@ -259,11 +260,17 @@ class Player:
             action()
 
     def decide_action(self):
+        previous_card = None
         if self.coins >= 10:
-            return Coup
+            return Coup, None
 
         for retry in range(3):
             card = random.choice(self.cards)
+
+            if card == previous_card:
+                continue
+            
+            previous_card = card
 
             if card.has_action:
                 if card.action == Assassinate and self.coins < 3:
@@ -272,32 +279,32 @@ class Player:
                     )
                     continue
 
-                return card.action
+                return card.action, None
 
         if self.coins >= 7:
-            return Coup
+            return Coup, None
 
-        return random.choice(self.COMMON_ACTIONS)
+        return random.choice(self.COMMON_ACTIONS), None
 
     def perceive_action(self, player, action, influence=None, target=None):
         pass
 
-    def react_to_action(self, player, action, target=None):
+    def react_to_action(self, player, action, influence=None, target=None):
         if action.name == "Income" or action.name == "Tax":
             return "Successful"
 
         for influence in self.cards:
             if (
-                influence == "Captain"
-                and action == "Steal"
+                influence.name == "Captain"
+                and action.name == "Steal"
                 and target.name == self.name
             ):
                 influence.block()
                 return "Blocked"
 
             if (
-                influence == "Contessa"
-                and action == "Assassinate"
+                influence.name == "Contessa"
+                and action.name == "Assassinate"
                 and target.name == self.name
             ):
                 influence.block()
@@ -319,6 +326,7 @@ class AIPlayer(Player):
 
     def __init__(self, name, players=[]):
         super().__init__(name)
+        self.name = f"\033[32mAI {self.name}\033[37m"
         self.logger = logging.getLogger(name)
         self.players = players
 
@@ -332,19 +340,104 @@ class AIPlayer(Player):
     def perceive_action(self, player, action, influence=None, target=None):
         self.acknowledge_player_action(action, player, target)
 
+    def get_target_priority(self):
+        return sorted(
+            self.players,
+            key=lambda x: self.knowledge[x]["coins"],
+            reverse=True,
+        )
+
+    def decide_action(self):
+        target_list = self.get_target_priority()
+        for target in target_list:
+            if target.name == self.name:
+                continue
+
+            print(
+                f"{self.name} is targeting {target.name} because it has "
+                f"{target.coins} coins"
+            )
+
+            if not target.is_alive():
+                print("The target is dead... choosing other target")
+                continue
+
+            if self.coins >= 10:
+                print(
+                    f"{self.name} has 10+ coins and is obligated to coup"
+                )
+                return Coup, target
+
+            random.shuffle(self.cards)
+
+            for card in self.cards:
+                if card.has_action:
+                    if (
+                        card.action.name == 'Assassinate' and 
+                        (
+                            self.coins < 3 or 
+                            self.target_has(target, "Contessa")
+                        )
+                    ):
+                        print(
+                            f"{self.name} knows that can't assassinate "
+                            f"{target.name}"
+                        )
+                        continue
+                    
+                    if self.coins >= 7:
+                        return Coup, target
+
+                    if (
+                        card.action.name == 'Steal' and 
+                        self.target_has(target, "Captain")
+                    ):
+                        print(
+                            f"{self.name} knows that can't steal "
+                            f"from {target.name}"
+                        )
+                        continue
+
+                    target = (target if card.action.require_target else None)
+
+                    return card.action, target
+            
+            if self.game_hasnt("Duke"):
+                return ForeignAid, None
+            
+            return Income, None
+
+    def target_has(self, target, card_name):
+        return card_name in self.knowledge[target]["cards"]
+
+    def game_hasnt(self, card_name):
+        for player in self.players:
+            if self.target_has(player, card_name):
+                return False
+        
+        return True
+
     def react_to_action(self, player, action, influence=None, target=None):
         for influence in self.cards:
-            if influence == "Captain" and action == "Steal" and target == self:
-                return influence.block()
             if (
-                influence == "Contessa"
-                and action == "Assassinate"
-                and target == self
+                influence.name == "Captain" and 
+                action.name == "Steal" and 
+                target and target.name == self.name
+            ):  
+                influence.block()
+                return 'Blocked'
+            
+            if (
+                influence.name == "Contessa"
+                and action.name == "Assassinate" and
+                target and target.name == self.name
             ):
-                return influence.block()
+                influence.block()
+                return 'Blocked'
 
-            if influence == "Duke" and action == "Foreign Aid":
-                return influence.block()
+            if influence.name == "Duke" and action.name == "Foreign Aid":
+                influence.block()
+                return 'Blocked'
 
         return "Successful"
 
@@ -465,64 +558,64 @@ class AIPlayer(Player):
                     f"Since {player.name} played Tax,"
                     f"AI {self.name} inferred {player.name} has a Duke"
                 )
-                inferred_cards["Duke"] += 1
+                inferred_cards["Duke"] = 1
             elif action == "Assassinate":
                 print(
                     f"Since {player.name} played Assassinate,"
                     f"AI {self.name} inferred {player.name} has an Assassin"
                 )
-                inferred_cards["Assassin"] += 1
+                inferred_cards["Assassin"] = 1
             elif action == "Steal":
                 print(
                     f"Since {player.name} played Steal,"
                     f"AI {self.name} inferred {player.name} has a Captain"
                 )
-                inferred_cards["Captain"] += 1
+                inferred_cards["Captain"] = 1
             elif action == "Block Foreign Aid":
                 print(
                     f"Since {player.name} blocked Foreign Aid,"
                     f"AI {self.name} inferred {player.name} has a Duke"
                 )
-                inferred_cards["Duke"] += 1
+                inferred_cards["Duke"] = 1
             elif action == "Block Assassination":
                 print(
                     f"Since {player.name} blocked Assassination,"
                     f"AI {self.name} inferred {player.name} has a Contessa"
                 )
-                inferred_cards["Contessa"] += 1
+                inferred_cards["Contessa"] = 1
             elif action in ["Foreign Aid", "Income"]:
                 print(
                     f"Since {player.name} played {action},"
                     f"AI {self.name} inferred {player.name} doesnt have a Duke"
                 )
-                inferred_cards["Duke"] = 0.5
+                inferred_cards["Duke"] = 0
             elif action == "Assassinated":
                 print(
                     f"Since {player.name} was assassinated,"
                     f"AI {self.name} inferred {player.name} doesnt have a "
                     f"Contessa"
                 )
-                inferred_cards["Contessa"] = -1
+                inferred_cards["Contessa"] = 0
             elif action == "Stolen":
                 print(
                     f"Since {player.name} was stolen,"
                     f"AI {self.name} inferred {player.name} doesnt have a "
                     f"Captain"
                 )
-                inferred_cards["Captain"] = -1
+                inferred_cards["Captain"] = 0
             elif action == 'No block Foreign Aid':
                 print(
                     f"Since no one blocked Foreign Aid,"
                     f"AI {self.name} inferred {player.name} doesnt have a "
                     f"Duke"
                 )
-                inferred_cards["Duke"] = -1
+                inferred_cards["Duke"] = 0
             elif action == 'Block Stealing':
                 print(
                     f"Since {player.name} blocked Stealing,"
                     f"AI {self.name} inferred {player.name} has a Captain"
                 )
-                inferred_cards["Captain"] += 1
+                inferred_cards["Captain"] = 1
 
         cards = filter(lambda x: x[1] > 0, inferred_cards.items())
 
@@ -589,17 +682,21 @@ class CoupGame:
                 player.print_status()
             print("------------------\n")
 
+            time.sleep(5)
+
             self.next_turn()
         else:
             print(f"{self.players[0]} won!")
 
     def take_turn(self, player):
         target = None
+        dead_card = None
 
         # Player takes an action
-        action = player.decide_action()
+        action, target = player.decide_action()
         if action.require_target:
-            target = player.choose_target(self.players)
+            if not target:
+                target = player.choose_target(self.players)
             print(f"{player.name} decides to {action.name} against {target}")
             status, dead_card = action.play(player, target)
             print(f"{action.name} was {status} by {target}")
@@ -610,7 +707,7 @@ class CoupGame:
                     continue
 
                 status = reacting_player.react_to_action(
-                    player, action, reacting_player
+                    player=player, action=action, target=reacting_player
                 )
 
                 if status == "Blocked":
@@ -624,6 +721,8 @@ class CoupGame:
             print(f"The action was {status} by {reacting_player}")
 
         for ai_player in self.ai_players:
+            if not ai_player.is_alive():
+                continue
             print("\033[02m")
             ai_player.acknowledge_player_action(
                 player, action.name, status, target if target else None, dead_card

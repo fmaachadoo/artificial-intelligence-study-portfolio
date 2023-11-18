@@ -683,10 +683,10 @@ class CoupGame:
                 print(f"{player}'s dead!")
                 self.players.remove(player)
 
-            print("\n------------------")
+            print("\n--------- PLAYERS ----------")
             for player in self.players:
                 player.print_status()
-            print("------------------\n")
+            print("----------------------------\n")
 
             # time.sleep(5)
 

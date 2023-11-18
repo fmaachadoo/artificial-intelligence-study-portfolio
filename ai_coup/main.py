@@ -341,9 +341,15 @@ class AIPlayer(Player):
         self.acknowledge_player_action(action, player, target)
 
     def get_target_priority(self):
+        def sort_key(target):
+            return (
+                self.knowledge[target]["card_amount"], 
+                self.knowledge[target]["coins"]
+            )
+
         return sorted(
             self.players,
-            key=lambda x: self.knowledge[x]["coins"],
+            key=sort_key,
             reverse=True,
         )
 
@@ -463,7 +469,7 @@ class AIPlayer(Player):
         self.knowledge[player]["actions"].append(action)
         if target:
             print(
-                f"AI {self.name} acknowledged: {player.name} {action} "
+                f"{self.name} acknowledged: {player.name} {action} "
                 f"{target.name} was {status}"
             )
 
@@ -477,26 +483,26 @@ class AIPlayer(Player):
                 if status == "Successful":
                     self.knowledge[target]["actions"].append("Assassinated")
                     print(
-                        f"AI {self.name} acknowledged: {target.name} was assassinated"
+                        f"{self.name} acknowledged: {target.name} was assassinated"
                     )
                 elif status == "Blocked":
                     self.knowledge[target]["actions"].append(
                         "Block Assassination"
                     )
                     print(
-                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                        f"{self.name} acknowledged: {target.name} blocked {action}"
                     )
 
             elif action == "Steal":
                 if status == "Successful":
                     self.knowledge[target]["actions"].append("Stolen")
                     print(
-                        f"AI {self.name} acknowledged: {target.name} was stolen"
+                        f"{self.name} acknowledged: {target.name} was stolen"
                     )
                 elif status == "Blocked":
                     self.knowledge[target]["actions"].append("Block Stealing")
                     print(
-                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                        f"{self.name} acknowledged: {target.name} blocked {action}"
                     )
 
             elif action == "Foreign Aid":
@@ -506,19 +512,19 @@ class AIPlayer(Player):
                             "No block Foreign Aid"
                         )
                     print(
-                        f"AI {self.name} acknowledged: No one blocked Foreign Aid"
+                        f"{self.name} acknowledged: No one blocked Foreign Aid"
                     )
                 elif status == "Blocked":
                     self.knowledge[target]["actions"].append(
                         "Block Foreign Aid"
                     )
                     print(
-                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                        f"{self.name} acknowledged: {target.name} blocked {action}"
                     )
 
         else:
             print(
-                f"AI {self.name} acknowledged: {player.name} {action} was {status}"
+                f"{self.name} acknowledged: {player.name} {action} was {status}"
             )
 
         self.clear_duplicated_actions()
@@ -535,7 +541,7 @@ class AIPlayer(Player):
             self.knowledge[player]["card_amount"] = len(player.cards)
 
     def predict_game(self):
-        print(f'AI {self.name} is predicting the game')
+        print(f'{self.name} is predicting the game')
         for player in self.players:
             if player.name == self.name:
                 continue
@@ -556,64 +562,64 @@ class AIPlayer(Player):
             if action == "Tax":
                 print(
                     f"Since {player.name} played Tax,"
-                    f"AI {self.name} inferred {player.name} has a Duke"
+                    f"{self.name} inferred {player.name} has a Duke"
                 )
                 inferred_cards["Duke"] = 1
             elif action == "Assassinate":
                 print(
                     f"Since {player.name} played Assassinate,"
-                    f"AI {self.name} inferred {player.name} has an Assassin"
+                    f"{self.name} inferred {player.name} has an Assassin"
                 )
                 inferred_cards["Assassin"] = 1
             elif action == "Steal":
                 print(
                     f"Since {player.name} played Steal,"
-                    f"AI {self.name} inferred {player.name} has a Captain"
+                    f"{self.name} inferred {player.name} has a Captain"
                 )
                 inferred_cards["Captain"] = 1
             elif action == "Block Foreign Aid":
                 print(
                     f"Since {player.name} blocked Foreign Aid,"
-                    f"AI {self.name} inferred {player.name} has a Duke"
+                    f"{self.name} inferred {player.name} has a Duke"
                 )
                 inferred_cards["Duke"] = 1
             elif action == "Block Assassination":
                 print(
                     f"Since {player.name} blocked Assassination,"
-                    f"AI {self.name} inferred {player.name} has a Contessa"
+                    f"{self.name} inferred {player.name} has a Contessa"
                 )
                 inferred_cards["Contessa"] = 1
             elif action in ["Foreign Aid", "Income"]:
                 print(
                     f"Since {player.name} played {action},"
-                    f"AI {self.name} inferred {player.name} doesnt have a Duke"
+                    f"{self.name} inferred {player.name} doesnt have a Duke"
                 )
                 inferred_cards["Duke"] = 0
             elif action == "Assassinated":
                 print(
                     f"Since {player.name} was assassinated,"
-                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"{self.name} inferred {player.name} doesnt have a "
                     f"Contessa"
                 )
                 inferred_cards["Contessa"] = 0
             elif action == "Stolen":
                 print(
                     f"Since {player.name} was stolen,"
-                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"{self.name} inferred {player.name} doesnt have a "
                     f"Captain"
                 )
                 inferred_cards["Captain"] = 0
             elif action == 'No block Foreign Aid':
                 print(
                     f"Since no one blocked Foreign Aid,"
-                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"{self.name} inferred {player.name} doesnt have a "
                     f"Duke"
                 )
                 inferred_cards["Duke"] = 0
             elif action == 'Block Stealing':
                 print(
                     f"Since {player.name} blocked Stealing,"
-                    f"AI {self.name} inferred {player.name} has a Captain"
+                    f"{self.name} inferred {player.name} has a Captain"
                 )
                 inferred_cards["Captain"] = 1
 
@@ -625,7 +631,7 @@ class AIPlayer(Player):
         most_likely_cards = [card[0] for card in sorted_cards[:2]]
 
         print(
-            f"AI {self.name} inferred, as a final guess, "
+            f"{self.name} inferred, as a final guess, "
             f"that {player.name} has {most_likely_cards}"
         )
         
@@ -682,11 +688,13 @@ class CoupGame:
                 player.print_status()
             print("------------------\n")
 
-            time.sleep(5)
+            # time.sleep(5)
 
             self.next_turn()
         else:
-            print(f"{self.players[0]} won!")
+            for player in self.players:
+                if player.is_alive():
+                    print(f"{player} won!")
 
     def take_turn(self, player):
         target = None

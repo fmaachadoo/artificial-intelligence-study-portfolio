@@ -14,10 +14,12 @@ class Action:
 class Income(Action):
     name = "Income"
     require_target = False
-    
+
     @staticmethod
     def play(player, target=None):
         player.coins += 1
+
+        return "Successful", None
 
     def __str__(self):
         return "Income"
@@ -26,18 +28,23 @@ class Income(Action):
 class ForeignAid(Action):
     name = "Foreign Aid"
     require_target = False
-    
+
     @staticmethod
     def play(player, target):
+        status = "Successful"
+
         reacting_player = target
-        
-        status = reacting_player.react_to_action(player, ForeignAid, reacting_player)
-        if status == "Blocked":
-            return status
-        
+
+        if target:
+            status = reacting_player.react_to_action(
+                player, ForeignAid, reacting_player
+            )
+            if status == "Blocked":
+                return status
+
         player.coins += 2
-        
-        return status
+
+        return status, None
 
     def __str__(self):
         return "Foreign Aid"
@@ -46,12 +53,13 @@ class ForeignAid(Action):
 class Coup(Action):
     name = "Coup"
     require_target = True
-    
+
     @staticmethod
     def play(player, target):
         player.coins -= 7
-        target.cards.pop()
-        return 'Successful'
+        dead_card = target.cards.pop()
+        print(f"{target.name} lost {dead_card} card")
+        return "Successful", dead_card
 
     def __str__(self):
         return "Coup"
@@ -60,10 +68,12 @@ class Coup(Action):
 class Tax(Action):
     name = "Tax"
     require_target = False
-    
+
     @staticmethod
     def play(player, target=None):
         player.coins += 3
+
+        return "Successful", None
 
     def __str__(self):
         return "Tax"
@@ -72,17 +82,20 @@ class Tax(Action):
 class Assassinate(Action):
     name = "Assassinate"
     require_target = True
-    
+
     @staticmethod
     def play(player, target):
-        status = target.react_to_action(player, Assassinate, target)
-        if status == "Blocked":
-            return status
-        
+        status = "Successful"
+
+        if target:
+            status = target.react_to_action(player, Assassinate, target)
+            if status == "Blocked":
+                return status, None
+
         player.coins -= 3
-        target.cards.pop()
-        
-        return status
+        dead_card = target.cards.pop()
+
+        return status, dead_card
 
     def __str__(self):
         return "Assassinate"
@@ -91,24 +104,27 @@ class Assassinate(Action):
 class Steal(Action):
     name = "Steal"
     require_target = True
-    
+
     @staticmethod
     def play(player, target):
-        status = target.react_to_action(player, Steal, target)
-        if status == "Blocked":
-            return status
-        
+        status = "Successful"
+
+        if target:
+            status = target.react_to_action(player, Steal, target)
+            if status == "Blocked":
+                return status, None
+
         remained_coins = target.coins - 2
-        
+
         # If the target has less than 2 coins, the player can only steal the
         # amount of coins the target has
         if remained_coins < 0:
             player.coins += target.coins
             remained_coins = 0
-        
+
         target.coins = remained_coins
-        
-        return status
+
+        return status, None
 
     def __str__(self):
         return "Steal"
@@ -117,7 +133,7 @@ class Steal(Action):
 class BlockForeignAid(Action):
     name = "Block Foreign Aid"
     require_target = False
-    
+
     @staticmethod
     def play(player, target):
         pass
@@ -129,7 +145,7 @@ class BlockForeignAid(Action):
 class BlockAssassination(Action):
     name = "Block Assassination"
     require_target = False
-    
+
     @staticmethod
     def play(player, target):
         pass
@@ -141,7 +157,7 @@ class BlockAssassination(Action):
 class BlockStealing(Action):
     name = "Block Stealing"
     require_target = False
-    
+
     @staticmethod
     def play(player, target):
         pass
@@ -183,7 +199,7 @@ class Assassin(Card):
 class Captain(Card):
     has_action = True
     action = Steal
-    
+
     def play_action(self, player, target):
         return self.action(player, target)
 
@@ -196,7 +212,7 @@ class Captain(Card):
 
 class Contessa(Card):
     has_action = False
-    
+
     def block(self):
         return BlockAssassination()
 
@@ -209,18 +225,27 @@ class Player:
 
     COMMON_ACTIONS = [Income, ForeignAid]
 
+    POSSIBLE_ACTIONS = {
+        "Duke": ['Tax', 'Block Foreign Aid'],
+        "Assassin": ['Assassinate'],
+        "Captain": ['Steal', 'Block Stealing'],
+        "Contessa": ['Block Assassination']
+    }
+
     def __init__(self, name, players=[]):
         self.name = name
         self.cards = []
         self.coins = 2
         self.players = players
-        
+
     def print_status(self):
-        print(f"{self.name} has {self.coins} coins and [{', '.join(str(card) for card in self.cards)}] cards")
+        print(
+            f"{self.name} has {self.coins} coins and [{', '.join(str(card) for card in self.cards)}] cards"
+        )
 
     def is_alive(self):
         return len(self.cards) > 0
-    
+
     def choose_target(self, players):
         while True:
             chosen = random.choice(players)
@@ -237,15 +262,14 @@ class Player:
         if self.coins >= 10:
             return Coup
 
-        for i in range(random.randint(0, len(self.cards)-1)):
-            card_index = i
-            try:
-                card = self.cards[card_index]
-            except IndexError:
-                card_index = 0
+        for retry in range(3):
+            card = random.choice(self.cards)
 
             if card.has_action:
                 if card.action == Assassinate and self.coins < 3:
+                    print(
+                        f"{self.name} doesn't have enough coins to assassinate"
+                    )
                     continue
 
                 return card.action
@@ -259,15 +283,22 @@ class Player:
         pass
 
     def react_to_action(self, player, action, target=None):
+        if action.name == "Income" or action.name == "Tax":
+            return "Successful"
+
         for influence in self.cards:
-            if influence == "Captain" and action == "Steal" and target == self:
+            if (
+                influence == "Captain"
+                and action == "Steal"
+                and target.name == self.name
+            ):
                 influence.block()
                 return "Blocked"
 
             if (
                 influence == "Contessa"
                 and action == "Assassinate"
-                and target == self
+                and target.name == self.name
             ):
                 influence.block()
                 return "Blocked"
@@ -276,7 +307,7 @@ class Player:
                 influence.block()
                 return "Blocked"
 
-        if target == self:
+        if target.name == self.name:
             return "Successful"
 
     def __str__(self):
@@ -286,11 +317,13 @@ class Player:
 class AIPlayer(Player):
     is_artificial_intelligence = True
 
-    def __init__(self, name):
+    def __init__(self, name, players=[]):
         super().__init__(name)
         self.logger = logging.getLogger(name)
-    
+        self.players = players
+
     def initialize_players(self, players):
+        self.players = players
         self.knowledge = {
             player: {"cards": [], "actions": [], "coins": player.coins}
             for player in players
@@ -313,21 +346,108 @@ class AIPlayer(Player):
             if influence == "Duke" and action == "Foreign Aid":
                 return influence.block()
 
+        return "Successful"
+
     def acknowledge_player_action(
-        self, player, action, influence=None, target=None
+        self, player, action, status, target=None, dead_card=None
     ):
+        if target and dead_card:
+            for action in self.POSSIBLE_ACTIONS[dead_card.__class__.__name__]:
+                print(
+                    f'{self.name} is removing {action} '
+                    f'knowledge from {target.name}'
+                )
+                try:
+                    self.knowledge[target]["actions"].remove(action)
+                except ValueError:
+                    print(
+                        f"{self.name} never saw {target.name} {action}"
+                    )
+                    pass
+
+            self.knowledge[target]["card_amount"] -= 1
+
         self.knowledge[player]["actions"].append(action)
         if target:
             print(
-                f"AI acknowledged: {player.name} {action.name} {target.name}"
+                f"AI {self.name} acknowledged: {player.name} {action} "
+                f"{target.name} was {status}"
             )
+
+            if action == "Tax":
+                return
+
+            if action == "Income":
+                return
+
+            if action == "Assassination":
+                if status == "Successful":
+                    self.knowledge[target]["actions"].append("Assassinated")
+                    print(
+                        f"AI {self.name} acknowledged: {target.name} was assassinated"
+                    )
+                elif status == "Blocked":
+                    self.knowledge[target]["actions"].append(
+                        "Block Assassination"
+                    )
+                    print(
+                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                    )
+
+            elif action == "Steal":
+                if status == "Successful":
+                    self.knowledge[target]["actions"].append("Stolen")
+                    print(
+                        f"AI {self.name} acknowledged: {target.name} was stolen"
+                    )
+                elif status == "Blocked":
+                    self.knowledge[target]["actions"].append("Block Stealing")
+                    print(
+                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                    )
+
+            elif action == "Foreign Aid":
+                if status == "Successful":
+                    for player in self.players:
+                        self.knowledge[target]["actions"].append(
+                            "No block Foreign Aid"
+                        )
+                    print(
+                        f"AI {self.name} acknowledged: No one blocked Foreign Aid"
+                    )
+                elif status == "Blocked":
+                    self.knowledge[target]["actions"].append(
+                        "Block Foreign Aid"
+                    )
+                    print(
+                        f"AI {self.name} acknowledged: {target.name} blocked {action}"
+                    )
+
         else:
-            print(f"AI acknowledged: {player.name} {action.name}")
-        
+            print(
+                f"AI {self.name} acknowledged: {player.name} {action} was {status}"
+            )
+
+        self.clear_duplicated_actions()
+
+    def clear_duplicated_actions(self):
+        for player in self.players:
+            self.knowledge[player]["actions"] = list(
+                set(self.knowledge[player]["actions"])
+            )
+
     def acknowledge_game_status(self, players):
         for player in players:
             self.knowledge[player]["coins"] = player.coins
             self.knowledge[player]["card_amount"] = len(player.cards)
+
+    def predict_game(self):
+        print(f'AI {self.name} is predicting the game')
+        for player in self.players:
+            if player.name == self.name:
+                continue
+
+            self.knowledge[player]['cards'] = self.predict_player_cards(player)
 
     def predict_player_cards(self, player):
         # Initialize a dictionary to hold the inferred cards for the player
@@ -341,52 +461,81 @@ class AIPlayer(Player):
         # Logical propositions based on actions
         for action in self.knowledge[player]["actions"]:
             if action == "Tax":
+                print(
+                    f"Since {player.name} played Tax,"
+                    f"AI {self.name} inferred {player.name} has a Duke"
+                )
                 inferred_cards["Duke"] += 1
             elif action == "Assassinate":
+                print(
+                    f"Since {player.name} played Assassinate,"
+                    f"AI {self.name} inferred {player.name} has an Assassin"
+                )
                 inferred_cards["Assassin"] += 1
             elif action == "Steal":
+                print(
+                    f"Since {player.name} played Steal,"
+                    f"AI {self.name} inferred {player.name} has a Captain"
+                )
                 inferred_cards["Captain"] += 1
             elif action == "Block Foreign Aid":
+                print(
+                    f"Since {player.name} blocked Foreign Aid,"
+                    f"AI {self.name} inferred {player.name} has a Duke"
+                )
                 inferred_cards["Duke"] += 1
             elif action == "Block Assassination":
+                print(
+                    f"Since {player.name} blocked Assassination,"
+                    f"AI {self.name} inferred {player.name} has a Contessa"
+                )
                 inferred_cards["Contessa"] += 1
             elif action in ["Foreign Aid", "Income"]:
-                inferred_cards["Duke"] = max(inferred_cards["Duke"] - 1, 0)
+                print(
+                    f"Since {player.name} played {action},"
+                    f"AI {self.name} inferred {player.name} doesnt have a Duke"
+                )
+                inferred_cards["Duke"] = 0.5
             elif action == "Assassinated":
+                print(
+                    f"Since {player.name} was assassinated,"
+                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"Contessa"
+                )
                 inferred_cards["Contessa"] = -1
             elif action == "Stolen":
+                print(
+                    f"Since {player.name} was stolen,"
+                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"Captain"
+                )
                 inferred_cards["Captain"] = -1
+            elif action == 'No block Foreign Aid':
+                print(
+                    f"Since no one blocked Foreign Aid,"
+                    f"AI {self.name} inferred {player.name} doesnt have a "
+                    f"Duke"
+                )
+                inferred_cards["Duke"] = -1
+            elif action == 'Block Stealing':
+                print(
+                    f"Since {player.name} blocked Stealing,"
+                    f"AI {self.name} inferred {player.name} has a Captain"
+                )
+                inferred_cards["Captain"] += 1
 
-        # If a player never blocks Foreign Aid, they likely do not have a Duke
-        if "Block Foreign Aid" not in self.knowledge[player]["actions"]:
-            inferred_cards["Duke"] = (
-                0 if "Duke" not in self.knowledge[player]["cards"] else 1
-            )
-
-        # TODO revise this logic
-        # Repeated Income Actions
-        if (
-            self.knowledge[player]["actions"].count("Income") > 2
-        ):  # Arbitrary threshold
-            # Frequent use of Income might suggest a lack of powerful cards
-            inferred_cards["Duke"] = max(inferred_cards["Duke"] - 1, 0)
-            inferred_cards["Captain"] = max(inferred_cards["Captain"] - 1, 0)
-            inferred_cards["Assassin"] = max(inferred_cards["Assassin"] - 1, 0)
-
-        # Normalize the counts to reflect that each player has only two cards
-        for card in inferred_cards:
-            inferred_cards[card] = min(inferred_cards[card], 2)
+        cards = filter(lambda x: x[1] > 0, inferred_cards.items())
 
         # Find the two most likely cards
-        sorted_cards = sorted(
-            inferred_cards.values(), key=lambda x: x[1], reverse=True
-        )
-        most_likely_cards = (
-            [card for card in sorted_cards[:2]]
-            if len(sorted_cards) > 1
-            else sorted_cards
-        )
+        sorted_cards = sorted(cards, key=lambda x: x[1], reverse=True)
+        
+        most_likely_cards = [card[0] for card in sorted_cards[:2]]
 
+        print(
+            f"AI {self.name} inferred, as a final guess, "
+            f"that {player.name} has {most_likely_cards}"
+        )
+        
         return most_likely_cards
 
 
@@ -402,9 +551,9 @@ class CoupGame:
         self.dead_cards = []
         self.current_player = 0
         self.shuffle_deck()
-        
+
         self.ai_players = [p for p in players if p.is_artificial_intelligence]
-        
+
         for ai_player in self.ai_players:
             ai_player.initialize_players(self.players)
             ai_player.acknowledge_game_status(self.players)
@@ -424,51 +573,66 @@ class CoupGame:
 
     def play(self):
         self.deal_cards()
-        
+
         while not self.is_game_over():
             player = self.players[self.current_player]
             print(f"{player}'s turn")
             if player.is_alive():
                 self.take_turn(player)
-                
+
             else:
                 print(f"{player}'s dead!")
                 self.players.remove(player)
-            
-            print('\n------------------')
+
+            print("\n------------------")
             for player in self.players:
                 player.print_status()
-            print('------------------\n')
-                
+            print("------------------\n")
+
             self.next_turn()
         else:
             print(f"{self.players[0]} won!")
 
     def take_turn(self, player):
         target = None
-        
+
         # Player takes an action
         action = player.decide_action()
         if action.require_target:
             target = player.choose_target(self.players)
             print(f"{player.name} decides to {action.name} against {target}")
-            status = action.play(player, target)
+            status, dead_card = action.play(player, target)
             print(f"{action.name} was {status} by {target}")
         else:
             print(f"{player.name} decides to {action.name}")
             for reacting_player in self.players:
                 if reacting_player == player:
                     continue
-                    
-            status = action.play(player=player, target=reacting_player)
+
+                status = reacting_player.react_to_action(
+                    player, action, reacting_player
+                )
+
+                if status == "Blocked":
+                    print(f"The action was {status} by {reacting_player}")
+                    break
+
+            else:
+                print("No one blocked the action")
+                status, dead_card = action.play(player=player, target=None)
+
             print(f"The action was {status} by {reacting_player}")
-                
+
         for ai_player in self.ai_players:
+            print("\033[02m")
             ai_player.acknowledge_player_action(
-                player, action, status, target if target else None
+                player, action.name, status, target if target else None, dead_card
             )
-            
+
             ai_player.acknowledge_game_status(self.players)
+
+            ai_player.predict_game()
+            print("\033[0m")
 
     def acknoledge_ai_players(self, player, action, status, target=None):
         for ai_player in self.ai_players:
@@ -480,7 +644,7 @@ class CoupGame:
         return len(alive_players) <= 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Initialize the players
     players = [
         Player("Bob"),

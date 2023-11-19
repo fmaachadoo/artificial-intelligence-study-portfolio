@@ -1,0 +1,1278 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Estudos de inteligência artificial.">
+      
+      
+        <meta name="author" content="Filipe Machado">
+      
+      
+      
+        <link rel="prev" href="../csp/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Agentes baseados em Conhecimento (Portfolio 4) - IA Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agentes-baseados-em-conhecimento" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="IA Portfolio" class="md-header__button md-logo" aria-label="IA Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IA Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agentes baseados em Conhecimento (Portfolio 4)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmaachadoo/artificial-intelligence-study-portfolio
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IA Portfolio" class="md-nav__button md-logo" aria-label="IA Portfolio" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IA Portfolio
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmaachadoo/artificial-intelligence-study-portfolio
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    História
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../state-of-the-art/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estado da Arte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem_solving_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agentes de Soluções de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de Busca
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heuristics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funções Heurísticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complex_environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Busca em ambientes complexos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../genetic_algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos genéticos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_discussions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussões (Porfolio 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio_2_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projetos e problemas (Porfolio 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSPs (Portfolio 3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Agentes baseados em Conhecimento (Portfolio 4)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Agentes baseados em Conhecimento (Portfolio 4)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tell-ask" class="md-nav__link">
+    TELL &amp; ASK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abordagens" class="md-nav__link">
+    Abordagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logica" class="md-nav__link">
+    Lógica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-bnf" class="md-nav__link">
+    Estrutura Básica BNF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processo-de-inferencia" class="md-nav__link">
+    Processo de inferência
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agente-baseado-em-logica-proposicional" class="md-nav__link">
+    Agente baseado em lógica proposicional
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-e-discussoes" class="md-nav__link">
+    Projeto e discussões
+  </a>
+  
+    <nav class="md-nav" aria-label="Projeto e discussões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prolog" class="md-nav__link">
+    Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coup-simplificado" class="md-nav__link">
+    Coup Simplificado
+  </a>
+  
+    <nav class="md-nav" aria-label="Coup Simplificado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao" class="md-nav__link">
+    Execução
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografia
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tell-ask" class="md-nav__link">
+    TELL &amp; ASK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abordagens" class="md-nav__link">
+    Abordagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logica" class="md-nav__link">
+    Lógica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-bnf" class="md-nav__link">
+    Estrutura Básica BNF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processo-de-inferencia" class="md-nav__link">
+    Processo de inferência
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agente-baseado-em-logica-proposicional" class="md-nav__link">
+    Agente baseado em lógica proposicional
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-e-discussoes" class="md-nav__link">
+    Projeto e discussões
+  </a>
+  
+    <nav class="md-nav" aria-label="Projeto e discussões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prolog" class="md-nav__link">
+    Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coup-simplificado" class="md-nav__link">
+    Coup Simplificado
+  </a>
+  
+    <nav class="md-nav" aria-label="Coup Simplificado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucao" class="md-nav__link">
+    Execução
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografia
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="agentes-baseados-em-conhecimento">Agentes baseados em conhecimento</h1>
+<p>Agentes baseados em conhecimento são projetados para operar em domínios 
+específicos. Eles utilizam um vasto conjunto de conhecimentos sobre esse 
+domínio para interpretar dados, resolver problemas e tomar decisões.
+Esses conhecimentos sobre o domínio se sintetizam em forma de uma base de 
+conhecimento que armazena fatos, regras, heurísticas e relações que são 
+estruturados de forma que o agente possa acessá-la e interpretá-la 
+eficientemente utilizando regras de lógica, utilizando raciocínio dedutivo,
+indutivo ou abdutivo.</p>
+<p>Explicando novamente:</p>
+<p>Podemos chamar essa base de conhecimento de <em>knowledge base</em> (KB) e essa
+base irá guardar sentenças que representam alguma informação sobre o mundo.
+Essas sentenças devem ser capazes de ser aferidas logicamente.</p>
+<p>Quando uma sentença na base de conhecimento não depende de outras sentenças,
+ou seja, é uma sentença independente, podemos chamar de <strong>axioma</strong></p>
+<h2 id="tell-ask">TELL &amp; ASK</h2>
+<p>Essa base de conhecimento é mutável e deve ser capaz de adição de novas
+setenças. Comumente, essas operações de adição de sentenças pode ser chamada de
+<strong>TELL</strong>.</p>
+<p>Assim como podemos adicionar novas sentenças na base de conhecimento, devemos
+também ter a capacidade de consultar e aferir as sentenças. Essas operações de
+consulta são comumente chamadas de <strong>ASK</strong>.</p>
+<p>Ambos os processos mencionados acima podem envolver inferência, gerando novas
+sentenças derivando de sentenças antigas.</p>
+<h2 id="abordagens">Abordagens</h2>
+<p>Temos duas abordagens para o desenvolvimento do agente baseado em conhecimento:</p>
+<ul>
+<li>
+<p>Abordagem declarativa: Quando uma base de conhecimento inicia-se vazia, e
+as setenças são criadas em tempo de execução, sendo inseridas por um 
+projetista.</p>
+</li>
+<li>
+<p>Abordagem procedural: Quando as sentenças e comportamentos desejados são
+inseridos diretamente no código do programa.</p>
+</li>
+</ul>
+<h2 id="logica">Lógica</h2>
+<p>Na lógica, identificamos principalmente dois elementos: 
+A sintaxe e a semântica.</p>
+<p>A sintaxe, um componente essencial do sistema linguístico em uso, estabelece as 
+relações entre os elementos de uma sentença. Ela define a estrutura correta e a 
+forma de construção das frases.</p>
+<p>Por outro lado, a semântica se ocupa da interpretação das sentenças. Dentro de 
+um contexto lógico possível 
+(onde as sentenças não violam regras estabelecidas), a semântica é responsável 
+por determinar a veracidade das afirmações. </p>
+<p>Tomemos, por exemplo, a sentença <em>alfa ( α )</em>. Se em um modelo específico 
+<em>M</em>, <em>α</em> é considerada verdadeira, então dizemos que <em>M</em> satisfaz ou é um 
+modelo para <strong>α</strong>.</p>
+<p>A relação lógica entre sentenças é expressa pela notação α⊨β. Isso significa 
+que α é consequência lógica de β (α implica β), ou que β é verdadeiro se, e 
+somente se, α também for verdadeiro.</p>
+<p>Então tendo uma base de conhecimentos <em>KB</em>, e um algoritmo de inferência tiver 
+a capacidade de derivar <em>α</em> de <em>KB</em>, podemos escrever logicamente: <em>α</em> é derivado 
+de <em>KB</em> por <em>i</em> ou <em>i</em> deriva <em>α</em> de <em>KB</em>.</p>
+<p><strong>Quando a sintaxe da lógica proposicional que é utilizada para criar as relações</strong>
+<strong>entre as sentenças do nosso agente, podemos definir os seguintes simbolos:</strong></p>
+<p>Snippet <em>ipsis litteris</em> retirado do slide da aula 12 de Inteligência 
+Artificial, ministrada na Universidade de Brasília pelo professor 
+Fabiano Araújo Soares:</p>
+<pre><code>¬ (não, NOT). Uma sentença como ¬W1,3 é chamada de negação de W1,3. ​
+
+∧ (e, AND). Uma sentença cujo conectivo principal é ∧, como W1,3 ∧ P3,1, é chamada de conjunção;​
+
+∨ (ou, OR). Uma sentença cujo conectivo principal é ∨, como W1,3 ∨ P3,1, é uma disjunção; ​
+
+⇒ (implica, IMPLIES). Uma sentença como (W1,3 ∧ P3,1) ⇒ ¬W2,2 é chamada de implicação (ou condicional). Sua premissa ou antecedente é (W1,3 ∧ P3,1), e sua conclusão ou consequente é ¬W2,2. As implicações também são conhecidas como regras ou declarações if-then. A implicação é escrita em outros livros como ⊃ ou →.​
+
+⇔ (se e somente se). A sentença W1,3 ⇔ ¬W2,2 é uma bicondicional.​
+
+Temos também o ou exclusivo: Não há consenso sobre o símbolo para ou exclusivo, a princípio, vamos adorar ⊕.​
+</code></pre>
+<p>Na programação podemos utilizar a forma Backus-Naur (BNF) para expressar a
+sintaxe da lógica dos programas.</p>
+<h2 id="estrutura-basica-bnf">Estrutura Básica BNF</h2>
+<p><strong>Símbolos Terminais</strong>: São os elementos básicos da linguagem 
+(por exemplo, palavras-chave, operadores, números literais). 
+Eles são escritos como estão, sem necessidade de definição adicional.</p>
+<p><strong>Símbolos Não-Terminais</strong>: Representam conjuntos de sequências de símbolos 
+terminais e não-terminais. Eles são usualmente descritos em termos de outros 
+símbolos não-terminais e terminais.</p>
+<p><strong>Regras de Produção</strong>: São declarações que descrevem como os símbolos 
+não-terminais podem ser combinados para formar sequências válidas na linguagem. 
+Cada regra de produção tem um símbolo não-terminal no lado esquerdo do sinal 
+de igual (::=) e os símbolos que definem esse não-terminal no lado direito.</p>
+<p><strong>Exemplo Simples</strong></p>
+<p>Considere uma linguagem simples onde definimos que uma "expressão" pode ser um 
+número, uma adição ou uma subtração:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nx">expression</span><span class="p">&gt;</span><span class="w"> </span><span class="p">:</span><span class="o">:=</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">number</span><span class="p">&gt;</span>
+<span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">expression</span><span class="p">&gt;</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">expression</span><span class="p">&gt;</span>
+<span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">expression</span><span class="p">&gt;</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">expression</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nx">number</span><span class="p">&gt;</span><span class="w"> </span><span class="p">:</span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&quot;9&quot;</span>
+</code></pre></div>
+<p>Esse conceito é utilizado não só em inteligência artificial, mas também em
+interpretadores de linguagem por exemplo.</p>
+<blockquote>
+<p>Em 2019, eu fiz uma linguagem de programação interpretada que utiliza a forma
+Backus-Naur para definir as regras da linguagem. Essa linguagem utiliza uma
+sintaxe formada por palavras em latim. O projeto é chamado de 
+<a href="https://github.com/fmaachadoo/Latym-language">Latym-language</a> pois foi
+desenvolvido em Python.</p>
+<p>Podemos ver no arquvio <a href="https://github.com/fmaachadoo/Latym-language/blob/master/latym/grammar.lark">grammar.lark</a>
+como que as regras da sintaxe foram definidas.</p>
+<p>Observe que a sintática apenas define sintaxe, sendo necessário outro formato
+de definição para a <a href="https://github.com/fmaachadoo/Latym-language/blob/master/latym/runtime.py">semântica</a>.</p>
+</blockquote>
+<p>Já quando falamos da semântica da lógica proposicional, a semântica define
+as regras para determinar quando uma sentença é verdadeira em um determinado
+modelo.</p>
+<p>Darei mais detalhes sobre lógica ao explicar o projeto desenvolvido para
+a entrega deste compilado sobre agentes baseados em conhecimento.</p>
+<h2 id="processo-de-inferencia">Processo de inferência</h2>
+<p>No campo da inteligência artificial, especialmente relevante para nós como 
+engenheiros de software, o processo de inferência é um aspecto central que 
+permeia várias áreas e aplicações. Este processo se baseia em deduzir 
+conclusões lógicas a partir de informações disponíveis, utilizando tanto 
+raciocínio dedutivo quanto indutivo. A dedução se concentra em tirar conclusões 
+necessárias de premissas consideradas verdadeiras, enquanto a indução visa 
+extrair conclusões prováveis a partir de observações.</p>
+<p>A lógica formal desempenha um papel crucial aqui, fornecendo uma estrutura 
+rigorosa para representar e inferir conhecimento. Ela ajuda a distinguir entre 
+inferência dedutiva, que lida com conclusões necessárias a partir de premissas 
+conhecidas, e inferência indutiva, que busca padrões para gerar conclusões 
+prováveis. Em inteligência artificial, isso se traduz em sistemas de inferência 
+automática, como os sistemas baseados em regras, que aplicam regras lógicas 
+para eficientemente inferir novas informações.</p>
+<p>Além disso, a inferência probabilística, que lida com incertezas e atribui 
+probabilidades às conclusões, é vital em contextos onde a certeza absoluta é 
+inalcançável. Redes Bayesianas são um exemplo típico dessa aplicação. Nos 
+sistemas baseados em conhecimento, observamos um ciclo de inferência que 
+envolve a coleta de informações, consulta à base de conhecimento, dedução de 
+ações apropriadas e, por fim, a execução dessas ações.</p>
+<p>No aprendizado de máquina, a inferência é fundamental na capacidade do modelo 
+de generalizar a partir dos dados de treinamento para fazer previsões sobre 
+novos dados. Assim, seja em sistemas baseados em regras ou em aprendizado de 
+máquina, a habilidade de realizar inferências lógicas e probabilísticas é 
+essencial para desenvolver soluções eficazes em IA. Este entendimento é crucial 
+para nós na engenharia de software, pois permite criar sistemas mais 
+inteligentes e adaptáveis.</p>
+<h2 id="agente-baseado-em-logica-proposicional">Agente baseado em lógica proposicional</h2>
+<p>Definimos um agente baseado em lógica proposicional, aquele que consegue,
+ao utilizar uma base de conhecimento, tomar ações baseado nas relações entre
+as sentenças.</p>
+<p>Podemos relembrar a Backus-Naur Form para expressar problemas para agentes
+baseados em lógica proposicional, de formas que para expressar as sentenças
+podemos usar proposições simples, que são unidades básicas de conhecimentos, ou
+também podem ser chamadas de átomos, visto que são sentenças indivisíveis. E
+para relacionar essas proposições podemos utilizar Conjunções e Disjunções,
+como os operadores lógicos <code>AND</code> (conjunção "e") ou <code>OR</code> (disjunção "ou"),
+permitindo assim a criação de sentenças complexas.</p>
+<blockquote>
+<p>A lógica proposicional é uma forma simples e formal de representar 
+conhecimentos, vantajosa pela sua clareza, simplicidade e facilidade de 
+implementação. Contudo, ela é limitada em expressividade, não sendo adequada 
+para representar relações complexas ou conhecimento hierárquico. Além disso, 
+enfrenta desafios de escalabilidade em sistemas mais complexos, onde a adição 
+de novos fatos pode levar a um aumento exponencial nas combinações a serem 
+consideradas.</p>
+</blockquote>
+<h2 id="projeto-e-discussoes">Projeto e discussões</h2>
+<h3 id="prolog"><a href="https://www.swi-prolog.org/pldoc/doc_for?object=manual">Prolog</a></h3>
+<p>Agentes baseados em conhecimento podem ser utilizado em inúmeras aplicações,
+tanto em jogos quanto em contexto medicinal por exemplo, ajudando em análises
+e identificação de possíveis problemas.</p>
+<p>Podemos citar que esse tipo de agente não é novidade no ramo da inteligência
+artificial. Uma linguagem que consegue ter a vantagem de facilidade do
+desenvolvimento desses agentes é Prolog, que é uma linguagem que utiliza
+um paradigma lógico matemático.</p>
+<p>Prolog é amplamente utilizado em sistemas de inferência e resolução de 
+problemas em IA, graças à sua habilidade natural de representar regras de 
+conhecimento e realizar inferências lógicas. Também é eficiente em problemas de 
+busca, processamento de linguagem natural e na representação de conhecimento e 
+ontologias, sendo útil para prototipagem rápida devido à sua natureza de alto 
+nível.
+Apesar de suas vantagens, Prolog tem limitações em termos de desempenho, principalmente em aplicações que exigem alto processamento. Sua curva de 
+aprendizado pode ser íngrime para quem está acostumado com linguagens 
+imperativas, e a escalabilidade pode ser um desafio em sistemas muito grandes e 
+complexos.</p>
+<blockquote>
+<p>Eu já <a href="https://github.com/fmaachadoo/2021.2-G2_Solaire_Disciples_Logical_Hospital_Triage">desenvolvi um sistema em Prolog</a> 
+para gerar a Classificação de Manchester em um hospital fictício. O sistema
+utiliza conhecimento sobre a situação dos pacientes para fazer um rankeamento
+e gerar uma fila de prioridade para o atendimento.</p>
+</blockquote>
+<h3 id="coup-simplificado">Coup Simplificado</h3>
+<p>Para exemplificar e explicar um pouco melhor como um agente baseado em 
+conhecimento funciona, fiz um programa que simula uma versão simplificada do
+jogo 
+<a href="https://tabulaquadrada.com.br/review-coup-que-mane-golpinho-o-que/">Coup</a>.</p>
+<p>As regras do jogo são:
+    - Inicialmente cada jogador recebe duas cartas e duas moedas.
+    - Quando é a vez do jogador, ele pode escolher realizar uma ação comum ou uma ação da carta.
+    - Algumas cartas podem bloquear certas ações.
+    - Quando um jogador possui 10 ou mais moedas, ele é obrigado a realizar a ação de golpe de estado.
+    - Ganha o jogador que ainda tiver carta quando nenhum outro jogador tem uma carta.</p>
+<p>As ações comuns são:
+    - Coup, ou Golpe de Estado: O jogador gasta 7 moedas e elimina uma carta inimiga, e essa ação não pode ser bloqueada.
+    - Income, ou Renda: O jogador pega apenas uma moeda do jogo para si, esta ação não pode ser bloqueada.
+    - Foreign Aid, ou Ajuda Externa: O jogador pode pegar duas moedas do jogo, porém um Duque pode bloquear essa ação.</p>
+<p>As cartas são chamadas de influências:
+    - Duque (Duke)
+        - Tax: O duque pode pegar 3 moedas do jogo para si, esta ação não pode ser bloqueada.
+        - O duque pode bloquear a ação de Ajuda Externa de outro jogador.
+    - Capitão (Captain)
+        - O capitão pode roubar duas moedas de outro jogador, essa ação pode ser bloqueada se e somente se o outro jogador também tiver um capitão.
+    - Assassino (Assassin)
+        - O assassino gasta 3 moedas para tentar assassinar outro jogador. Essa ação pode ser bloqueada se e somente se o outro jogador tiver uma Condessa.
+    - Condessa (Contessa)
+        - Apenas bloqueia o assassinado de si mesmo.</p>
+<blockquote>
+<p>Observação: Para fins de simplicidade o Embaixador foi retirado do jogo.</p>
+<p>Observação 2: Para fins de simplicidade retiramos a possibilidade de Blefe.</p>
+</blockquote>
+<p>O código do jogo se encontra na pasta <a href="https://github.com/fmaachadoo/artificial-intelligence-study-portfolio/tree/main/ai_coup">ai_coup dentro do repositório do presente
+documento</a>.</p>
+<h4 id="execucao">Execução</h4>
+<p>Para executar o projeto, basta executar o comando:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>main.py
+</code></pre></div>
+<p>A partir daí, o programa irá imprimir na tela que operações os jogadores estão
+realizando e como os agentes baseados em conhecimento estão tomando deciões e
+guardando conhecimentos em sua base. Exemplo:</p>
+<div class="highlight"><pre><span></span><code>------------------
+Bob<span class="w"> </span>has<span class="w"> </span><span class="m">5</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Assassin,<span class="w"> </span>Duke<span class="o">]</span><span class="w"> </span>cards
+Shirley<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Contessa,<span class="w"> </span>Contessa<span class="o">]</span><span class="w"> </span>cards
+<span class="o">[</span>32mAI<span class="w"> </span>Guilherme<span class="o">[</span>37m<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Contessa,<span class="w"> </span>Captain<span class="o">]</span><span class="w"> </span>cards
+<span class="o">[</span>32mAI<span class="w"> </span>Kung<span class="w"> </span>Lao<span class="o">[</span>37m<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Duke,<span class="w"> </span>Captain<span class="o">]</span><span class="w"> </span>cards
+------------------
+
+<span class="o">[</span>32mAI<span class="w"> </span>Guilherme<span class="o">[</span>37m<span class="s1">&#39;s turn</span>
+<span class="s1">[32mAI Guilherme[37m is targeting Bob because it has 5 coins</span>
+<span class="s1">[32mAI Guilherme[37m decides to Steal against Bob</span>
+<span class="s1">Steal was Successful by Bob</span>
+<span class="s1">[02m</span>
+<span class="s1">[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful</span>
+<span class="s1">[32mAI Guilherme[37m acknowledged: Bob was stolen</span>
+<span class="s1">[32mAI Guilherme[37m is predicting the game</span>
+<span class="s1">Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke</span>
+<span class="s1">Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain</span>
+<span class="s1">[32mAI Guilherme[37m inferred, as a final guess, that Bob has [&#39;</span>Duke<span class="s1">&#39;]</span>
+<span class="s1">Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke</span>
+<span class="s1">[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []</span>
+<span class="s1">[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has []</span>
+<span class="s1">[0m</span>
+<span class="s1">[02m</span>
+<span class="s1">[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful</span>
+<span class="s1">[32mAI Kung Lao[37m acknowledged: Bob was stolen</span>
+<span class="s1">[32mAI Kung Lao[37m is predicting the game</span>
+<span class="s1">Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke</span>
+<span class="s1">Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain</span>
+<span class="s1">[32mAI Kung Lao[37m inferred, as a final guess, that Bob has [&#39;</span>Duke<span class="s1">&#39;]</span>
+<span class="s1">Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke</span>
+<span class="s1">[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []</span>
+<span class="s1">Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain</span>
+<span class="s1">[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has [&#39;</span>Captain<span class="err">&#39;</span><span class="o">]</span>
+<span class="o">[</span>0m
+
+------------------
+Bob<span class="w"> </span>has<span class="w"> </span><span class="m">3</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Assassin,<span class="w"> </span>Duke<span class="o">]</span><span class="w"> </span>cards
+Shirley<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Contessa,<span class="w"> </span>Contessa<span class="o">]</span><span class="w"> </span>cards
+<span class="o">[</span>32mAI<span class="w"> </span>Guilherme<span class="o">[</span>37m<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Contessa,<span class="w"> </span>Captain<span class="o">]</span><span class="w"> </span>cards
+<span class="o">[</span>32mAI<span class="w"> </span>Kung<span class="w"> </span>Lao<span class="o">[</span>37m<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>coins<span class="w"> </span>and<span class="w"> </span><span class="o">[</span>Duke,<span class="w"> </span>Captain<span class="o">]</span><span class="w"> </span>cards
+------------------
+</code></pre></div>
+<p>Nesta simulação temos dois tipos de agente:</p>
+<ul>
+<li>Bob e Shirley são agentes que possuem uma lógica básica de como jogar o jogo e não possuem base de conhecimento, fazendo assim que possam cometer erros ao tomar decisões.</li>
+<li>AI Guilherme e AI Kung Lao são agentes que possuem base de conhecimento e possuem uma lógica programada com a abordagem procedural.</li>
+</ul>
+<p>Então a cada jogada os agentes vão percebendo o que aconteceu e adicionando em
+sua base de conhecimento, para posteriormente inferir quais cartas os jogadores
+têm e poder tomar decisões mais corretas.</p>
+<p>Podemos ver nos logs que quando AI Guilherme tentou roubar duas moedas do Bob,
+que o roubo foi feito com sucesso, então a partir disso, AI Kung Lao pode
+inferir que AI Guilherme possui pelomenos um Capitão e que Bob não possui um 
+capitão.</p>
+<div class="highlight"><pre><span></span><code>AI Kung Lao acknowledged: AI Guilherme Steal Bob was Successful
+AI Kung Lao acknowledged: Bob was stolen
+AI Kung Lao is predicting the game
+Since Bob played Tax, AI Kung Lao inferred Bob has a Duke
+Since Bob was stolen, AI Kung Lao inferred Bob doesnt have a Captain
+AI Kung Lao inferred, as a final guess, that Bob has [&#39;Duke&#39;]
+Since Shirley played Foreign Aid, AI Kung Lao inferred Shirley doesnt have a Duke
+AI Kung Lao inferred, as a final guess, that Shirley has []
+Since AI Guilherme played Steal,AI Kung Lao inferred AI Guilherme has a Captain
+AI Kung Lao inferred, as a final guess, that AI Guilherme has [&#39;Captain&#39;]
+</code></pre></div>
+<blockquote>
+<p>AI Kung Lao também continuou inferindo ações em rodadas passadas do jogo.</p>
+</blockquote>
+<p>A lógica de inferência dos agentes é a seguinte:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">predict_player_cards</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+        <span class="c1"># Initialize a dictionary to hold the inferred cards for the player</span>
+        <span class="n">inferred_cards</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Duke&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;Assassin&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;Captain&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;Contessa&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Logical propositions based on actions</span>
+        <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">knowledge</span><span class="p">[</span><span class="n">player</span><span class="p">][</span><span class="s2">&quot;actions&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Tax&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> played Tax,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a Duke&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Duke&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Assassinate&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> played Assassinate,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has an Assassin&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Assassin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Steal&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> played Steal,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a Captain&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Captain&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Block Foreign Aid&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> blocked Foreign Aid,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a Duke&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Duke&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Block Assassination&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> blocked Assassination,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a Contessa&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Contessa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Foreign Aid&quot;</span><span class="p">,</span> <span class="s2">&quot;Income&quot;</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> played </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesnt have a Duke&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Duke&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Assassinated&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was assassinated,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesnt have a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Contessa&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Contessa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;Stolen&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was stolen,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesnt have a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Captain&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Captain&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;No block Foreign Aid&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since no one blocked Foreign Aid,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesnt have a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Duke&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Duke&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;Block Stealing&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Since </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> blocked Stealing,&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a Captain&quot;</span>
+                <span class="p">)</span>
+                <span class="n">inferred_cards</span><span class="p">[</span><span class="s2">&quot;Captain&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">cards</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inferred_cards</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="c1"># Find the two most likely cards</span>
+        <span class="n">sorted_cards</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cards</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">most_likely_cards</span> <span class="o">=</span> <span class="p">[</span><span class="n">card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">sorted_cards</span><span class="p">[:</span><span class="mi">2</span><span class="p">]]</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> inferred, as a final guess, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;that </span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="n">most_likely_cards</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">most_likely_cards</span>
+</code></pre></div>
+<p>É uma lógica simples, porém possui uma falha ao lidar com incertezas. 
+Por exemplo, quando a partida começa e ainda não temos nenhum conhecimento
+sobre os outros jogadores. Porém isso é fácil de resolver, incrementando o
+agente com lógica baseada em probabilidade.</p>
+<p>Enquanto isso temos a lógica para a tomada de decisões na jogada.
+Primeiro o agente irá escolher o jogador mais ameaçador 
+(com mais cartas e mais moedas) e em seguida irá definir o que é possível fazer
+contra esse jogador tendo como base o conhecimendo de quais cartas esse jogador
+possui. Caso não seja possível realizar nenhuma ação contra esse jogador,
+o agente irá ver qual outra ação ele pode fazer sem ser bloqueado por outro
+jogador.</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">get_target_priority</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">sort_key</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">knowledge</span><span class="p">[</span><span class="n">target</span><span class="p">][</span><span class="s2">&quot;card_amount&quot;</span><span class="p">],</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">knowledge</span><span class="p">[</span><span class="n">target</span><span class="p">][</span><span class="s2">&quot;coins&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">players</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">,</span>
+            <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">decide_action</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">target_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_target_priority</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">target_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is targeting </span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> because it has &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">coins</span><span class="si">}</span><span class="s2"> coins&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The target is dead... choosing other target&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has 10+ coins and is obligated to coup&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">Coup</span><span class="p">,</span> <span class="n">target</span>
+
+            <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">card</span><span class="o">.</span><span class="n">has_action</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="n">card</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Assassinate&#39;</span> <span class="ow">and</span> 
+                        <span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">or</span> 
+                            <span class="bp">self</span><span class="o">.</span><span class="n">target_has</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;Contessa&quot;</span><span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">):</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> knows that can&#39;t assassinate &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">continue</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">Coup</span><span class="p">,</span> <span class="n">target</span>
+
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="n">card</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Steal&#39;</span> <span class="ow">and</span> 
+                        <span class="bp">self</span><span class="o">.</span><span class="n">target_has</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;Captain&quot;</span><span class="p">)</span>
+                    <span class="p">):</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> knows that can&#39;t steal &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;from </span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">continue</span>
+
+                    <span class="n">target</span> <span class="o">=</span> <span class="p">(</span><span class="n">target</span> <span class="k">if</span> <span class="n">card</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">require_target</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+                    <span class="k">return</span> <span class="n">card</span><span class="o">.</span><span class="n">action</span><span class="p">,</span> <span class="n">target</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">game_hasnt</span><span class="p">(</span><span class="s2">&quot;Duke&quot;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">ForeignAid</span><span class="p">,</span> <span class="kc">None</span>
+
+            <span class="k">return</span> <span class="n">Income</span><span class="p">,</span> <span class="kc">None</span>
+</code></pre></div>
+<h2 id="bibliografia">Bibliografia</h2>
+<ul>
+<li>
+<p>Aula 12 de Inteligência Artificial, ministrada na Universidade de Brasília pelo
+professor Fabiano Araújo Soares.</p>
+</li>
+<li>
+<p>https://www.inf.ufsc.br/~alexandre.goncalves.silva/courses/14s2/ine5633/slides/aula1021.pdf</p>
+</li>
+<li>
+<p>https://www.ime.usp.br/~leliane/IAcurso2006/slides/Aula7-LProposicional-I-2006.pdf</p>
+</li>
+<li>
+<p>https://www.cin.ufpe.br/~in1116/aulas/agentes-bc.pptx</p>
+</li>
+<li>
+<p>https://www.swi-prolog.org/pldoc/doc_for?object=manual</p>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

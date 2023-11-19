@@ -42,7 +42,7 @@ projetista.
 - Abordagem procedural: Quando as sentenças e comportamentos desejados são
 inseridos diretamente no código do programa.
 
-# Lógica
+## Lógica
 
 Na lógica, identificamos principalmente dois elementos: 
 A sintaxe e a semântica.
@@ -139,7 +139,7 @@ modelo.
 Darei mais detalhes sobre lógica ao explicar o projeto desenvolvido para
 a entrega deste compilado sobre agentes baseados em conhecimento.
 
-# Processo de inferência
+## Processo de inferência
 
 No campo da inteligência artificial, especialmente relevante para nós como 
 engenheiros de software, o processo de inferência é um aspecto central que 
@@ -173,7 +173,7 @@ para nós na engenharia de software, pois permite criar sistemas mais
 inteligentes e adaptáveis.
 
 
-# Agente baseado em lógica proposicional
+## Agente baseado em lógica proposicional
 
 Definimos um agente baseado em lógica proposicional, aquele que consegue,
 ao utilizar uma base de conhecimento, tomar ações baseado nas relações entre
@@ -195,7 +195,342 @@ permitindo assim a criação de sentenças complexas.
 > de novos fatos pode levar a um aumento exponencial nas combinações a serem 
 > consideradas.
 
-# Bibliografia
+## Projeto e discussões
+
+### [Prolog](https://www.swi-prolog.org/pldoc/doc_for?object=manual)
+
+Agentes baseados em conhecimento podem ser utilizado em inúmeras aplicações,
+tanto em jogos quanto em contexto medicinal por exemplo, ajudando em análises
+e identificação de possíveis problemas.
+
+Podemos citar que esse tipo de agente não é novidade no ramo da inteligência
+artificial. Uma linguagem que consegue ter a vantagem de facilidade do
+desenvolvimento desses agentes é Prolog, que é uma linguagem que utiliza
+um paradigma lógico matemático.
+
+Prolog é amplamente utilizado em sistemas de inferência e resolução de 
+problemas em IA, graças à sua habilidade natural de representar regras de 
+conhecimento e realizar inferências lógicas. Também é eficiente em problemas de 
+busca, processamento de linguagem natural e na representação de conhecimento e 
+ontologias, sendo útil para prototipagem rápida devido à sua natureza de alto 
+nível.
+Apesar de suas vantagens, Prolog tem limitações em termos de desempenho, principalmente em aplicações que exigem alto processamento. Sua curva de 
+aprendizado pode ser íngrime para quem está acostumado com linguagens 
+imperativas, e a escalabilidade pode ser um desafio em sistemas muito grandes e 
+complexos.
+
+> Eu já [desenvolvi um sistema em Prolog](https://github.com/fmaachadoo/2021.2-G2_Solaire_Disciples_Logical_Hospital_Triage) 
+> para gerar a Classificação de Manchester em um hospital fictício. O sistema
+> utiliza conhecimento sobre a situação dos pacientes para fazer um rankeamento
+> e gerar uma fila de prioridade para o atendimento.
+
+
+### Coup Simplificado
+
+Para exemplificar e explicar um pouco melhor como um agente baseado em 
+conhecimento funciona, fiz um programa que simula uma versão simplificada do
+jogo 
+[Coup](https://tabulaquadrada.com.br/review-coup-que-mane-golpinho-o-que/).
+
+As regras do jogo são:
+    - Inicialmente cada jogador recebe duas cartas e duas moedas.
+    - Quando é a vez do jogador, ele pode escolher realizar uma ação comum ou uma ação da carta.
+    - Algumas cartas podem bloquear certas ações.
+    - Quando um jogador possui 10 ou mais moedas, ele é obrigado a realizar a ação de golpe de estado.
+    - Ganha o jogador que ainda tiver carta quando nenhum outro jogador tem uma carta.
+
+As ações comuns são:
+    - Coup, ou Golpe de Estado: O jogador gasta 7 moedas e elimina uma carta inimiga, e essa ação não pode ser bloqueada.
+    - Income, ou Renda: O jogador pega apenas uma moeda do jogo para si, esta ação não pode ser bloqueada.
+    - Foreign Aid, ou Ajuda Externa: O jogador pode pegar duas moedas do jogo, porém um Duque pode bloquear essa ação.
+
+As cartas são chamadas de influências:
+    - Duque (Duke)
+        - Tax: O duque pode pegar 3 moedas do jogo para si, esta ação não pode ser bloqueada.
+        - O duque pode bloquear a ação de Ajuda Externa de outro jogador.
+    - Capitão (Captain)
+        - O capitão pode roubar duas moedas de outro jogador, essa ação pode ser bloqueada se e somente se o outro jogador também tiver um capitão.
+    - Assassino (Assassin)
+        - O assassino gasta 3 moedas para tentar assassinar outro jogador. Essa ação pode ser bloqueada se e somente se o outro jogador tiver uma Condessa.
+    - Condessa (Contessa)
+        - Apenas bloqueia o assassinado de si mesmo.
+
+> Observação: Para fins de simplicidade o Embaixador foi retirado do jogo.
+
+> Observação 2: Para fins de simplicidade retiramos a possibilidade de Blefe.
+
+O código do jogo se encontra na pasta [ai_coup dentro do repositório do presente
+documento](https://github.com/fmaachadoo/artificial-intelligence-study-portfolio/tree/main/ai_coup).
+
+#### Execução
+
+Para executar o projeto, basta executar o comando:
+
+```sh
+python main.py
+```
+
+A partir daí, o programa irá imprimir na tela que operações os jogadores estão
+realizando e como os agentes baseados em conhecimento estão tomando deciões e
+guardando conhecimentos em sua base. Exemplo:
+
+```sh
+
+------------------
+Bob has 5 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Duke, Captain] cards
+------------------
+
+[32mAI Guilherme[37m's turn
+[32mAI Guilherme[37m is targeting Bob because it has 5 coins
+[32mAI Guilherme[37m decides to Steal against Bob
+Steal was Successful by Bob
+[02m
+[32mAI Guilherme[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Guilherme[37m acknowledged: Bob was stolen
+[32mAI Guilherme[37m is predicting the game
+Since Bob played Tax,[32mAI Guilherme[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Guilherme[37m inferred Bob doesnt have a Captain
+[32mAI Guilherme[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Guilherme[37m inferred Shirley doesnt have a Duke
+[32mAI Guilherme[37m inferred, as a final guess, that Shirley has []
+[32mAI Guilherme[37m inferred, as a final guess, that [32mAI Kung Lao[37m has []
+[0m
+[02m
+[32mAI Kung Lao[37m acknowledged: [32mAI Guilherme[37m Steal Bob was Successful
+[32mAI Kung Lao[37m acknowledged: Bob was stolen
+[32mAI Kung Lao[37m is predicting the game
+Since Bob played Tax,[32mAI Kung Lao[37m inferred Bob has a Duke
+Since Bob was stolen,[32mAI Kung Lao[37m inferred Bob doesnt have a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid,[32mAI Kung Lao[37m inferred Shirley doesnt have a Duke
+[32mAI Kung Lao[37m inferred, as a final guess, that Shirley has []
+Since [32mAI Guilherme[37m played Steal,[32mAI Kung Lao[37m inferred [32mAI Guilherme[37m has a Captain
+[32mAI Kung Lao[37m inferred, as a final guess, that [32mAI Guilherme[37m has ['Captain']
+[0m
+
+------------------
+Bob has 3 coins and [Assassin, Duke] cards
+Shirley has 2 coins and [Contessa, Contessa] cards
+[32mAI Guilherme[37m has 2 coins and [Contessa, Captain] cards
+[32mAI Kung Lao[37m has 2 coins and [Duke, Captain] cards
+------------------
+```
+
+Nesta simulação temos dois tipos de agente:
+
+- Bob e Shirley são agentes que possuem uma lógica básica de como jogar o jogo e não possuem base de conhecimento, fazendo assim que possam cometer erros ao tomar decisões.
+- AI Guilherme e AI Kung Lao são agentes que possuem base de conhecimento e possuem uma lógica programada com a abordagem procedural.
+
+Então a cada jogada os agentes vão percebendo o que aconteceu e adicionando em
+sua base de conhecimento, para posteriormente inferir quais cartas os jogadores
+têm e poder tomar decisões mais corretas.
+
+Podemos ver nos logs que quando AI Guilherme tentou roubar duas moedas do Bob,
+que o roubo foi feito com sucesso, então a partir disso, AI Kung Lao pode
+inferir que AI Guilherme possui pelomenos um Capitão e que Bob não possui um 
+capitão.
+
+```
+AI Kung Lao acknowledged: AI Guilherme Steal Bob was Successful
+AI Kung Lao acknowledged: Bob was stolen
+AI Kung Lao is predicting the game
+Since Bob played Tax, AI Kung Lao inferred Bob has a Duke
+Since Bob was stolen, AI Kung Lao inferred Bob doesnt have a Captain
+AI Kung Lao inferred, as a final guess, that Bob has ['Duke']
+Since Shirley played Foreign Aid, AI Kung Lao inferred Shirley doesnt have a Duke
+AI Kung Lao inferred, as a final guess, that Shirley has []
+Since AI Guilherme played Steal,AI Kung Lao inferred AI Guilherme has a Captain
+AI Kung Lao inferred, as a final guess, that AI Guilherme has ['Captain']
+```
+
+> AI Kung Lao também continuou inferindo ações em rodadas passadas do jogo.
+
+A lógica de inferência dos agentes é a seguinte:
+
+```python
+def predict_player_cards(self, player):
+        # Initialize a dictionary to hold the inferred cards for the player
+        inferred_cards = {
+            "Duke": 0,
+            "Assassin": 0,
+            "Captain": 0,
+            "Contessa": 0,
+        }
+
+        # Logical propositions based on actions
+        for action in self.knowledge[player]["actions"]:
+            if action == "Tax":
+                print(
+                    f"Since {player.name} played Tax,"
+                    f"{self.name} inferred {player.name} has a Duke"
+                )
+                inferred_cards["Duke"] = 1
+            elif action == "Assassinate":
+                print(
+                    f"Since {player.name} played Assassinate,"
+                    f"{self.name} inferred {player.name} has an Assassin"
+                )
+                inferred_cards["Assassin"] = 1
+            elif action == "Steal":
+                print(
+                    f"Since {player.name} played Steal,"
+                    f"{self.name} inferred {player.name} has a Captain"
+                )
+                inferred_cards["Captain"] = 1
+            elif action == "Block Foreign Aid":
+                print(
+                    f"Since {player.name} blocked Foreign Aid,"
+                    f"{self.name} inferred {player.name} has a Duke"
+                )
+                inferred_cards["Duke"] = 1
+            elif action == "Block Assassination":
+                print(
+                    f"Since {player.name} blocked Assassination,"
+                    f"{self.name} inferred {player.name} has a Contessa"
+                )
+                inferred_cards["Contessa"] = 1
+            elif action in ["Foreign Aid", "Income"]:
+                print(
+                    f"Since {player.name} played {action},"
+                    f"{self.name} inferred {player.name} doesnt have a Duke"
+                )
+                inferred_cards["Duke"] = 0
+            elif action == "Assassinated":
+                print(
+                    f"Since {player.name} was assassinated,"
+                    f"{self.name} inferred {player.name} doesnt have a "
+                    f"Contessa"
+                )
+                inferred_cards["Contessa"] = 0
+            elif action == "Stolen":
+                print(
+                    f"Since {player.name} was stolen,"
+                    f"{self.name} inferred {player.name} doesnt have a "
+                    f"Captain"
+                )
+                inferred_cards["Captain"] = 0
+            elif action == 'No block Foreign Aid':
+                print(
+                    f"Since no one blocked Foreign Aid,"
+                    f"{self.name} inferred {player.name} doesnt have a "
+                    f"Duke"
+                )
+                inferred_cards["Duke"] = 0
+            elif action == 'Block Stealing':
+                print(
+                    f"Since {player.name} blocked Stealing,"
+                    f"{self.name} inferred {player.name} has a Captain"
+                )
+                inferred_cards["Captain"] = 1
+
+        cards = filter(lambda x: x[1] > 0, inferred_cards.items())
+
+        # Find the two most likely cards
+        sorted_cards = sorted(cards, key=lambda x: x[1], reverse=True)
+        
+        most_likely_cards = [card[0] for card in sorted_cards[:2]]
+
+        print(
+            f"{self.name} inferred, as a final guess, "
+            f"that {player.name} has {most_likely_cards}"
+        )
+        
+        return most_likely_cards
+```
+
+É uma lógica simples, porém possui uma falha ao lidar com incertezas. 
+Por exemplo, quando a partida começa e ainda não temos nenhum conhecimento
+sobre os outros jogadores. Porém isso é fácil de resolver, incrementando o
+agente com lógica baseada em probabilidade.
+
+Enquanto isso temos a lógica para a tomada de decisões na jogada.
+Primeiro o agente irá escolher o jogador mais ameaçador 
+(com mais cartas e mais moedas) e em seguida irá definir o que é possível fazer
+contra esse jogador tendo como base o conhecimendo de quais cartas esse jogador
+possui. Caso não seja possível realizar nenhuma ação contra esse jogador,
+o agente irá ver qual outra ação ele pode fazer sem ser bloqueado por outro
+jogador.
+
+```python
+    def get_target_priority(self):
+        def sort_key(target):
+            return (
+                self.knowledge[target]["card_amount"], 
+                self.knowledge[target]["coins"]
+            )
+
+        return sorted(
+            self.players,
+            key=sort_key,
+            reverse=True,
+        )
+
+    def decide_action(self):
+        target_list = self.get_target_priority()
+        for target in target_list:
+            if target.name == self.name:
+                continue
+
+            print(
+                f"{self.name} is targeting {target.name} because it has "
+                f"{target.coins} coins"
+            )
+
+            if not target.is_alive():
+                print("The target is dead... choosing other target")
+                continue
+
+            if self.coins >= 10:
+                print(
+                    f"{self.name} has 10+ coins and is obligated to coup"
+                )
+                return Coup, target
+
+            random.shuffle(self.cards)
+
+            for card in self.cards:
+                if card.has_action:
+                    if (
+                        card.action.name == 'Assassinate' and 
+                        (
+                            self.coins < 3 or 
+                            self.target_has(target, "Contessa")
+                        )
+                    ):
+                        print(
+                            f"{self.name} knows that can't assassinate "
+                            f"{target.name}"
+                        )
+                        continue
+                    
+                    if self.coins >= 7:
+                        return Coup, target
+
+                    if (
+                        card.action.name == 'Steal' and 
+                        self.target_has(target, "Captain")
+                    ):
+                        print(
+                            f"{self.name} knows that can't steal "
+                            f"from {target.name}"
+                        )
+                        continue
+
+                    target = (target if card.action.require_target else None)
+
+                    return card.action, target
+            
+            if self.game_hasnt("Duke"):
+                return ForeignAid, None
+            
+            return Income, None
+
+```
+
+## Bibliografia
 
 - Aula 12 de Inteligência Artificial, ministrada na Universidade de Brasília pelo
 professor Fabiano Araújo Soares.
@@ -205,3 +540,5 @@ professor Fabiano Araújo Soares.
 - https://www.ime.usp.br/~leliane/IAcurso2006/slides/Aula7-LProposicional-I-2006.pdf
 
 - https://www.cin.ufpe.br/~in1116/aulas/agentes-bc.pptx
+
+- https://www.swi-prolog.org/pldoc/doc_for?object=manual

@@ -34,3 +34,5 @@ Irei deixar comentários sobre cada sessão utilizando o seguinte formato:
     * [Projetos e problemas](portfolio_2_projects.md)
 - Entrega 3
     * [Problemas de Satisfação de Condições (CSPs)](csp.md)
+- Entrega 4
+    * [Agentes baseados em Conhecimento](knowledge_based_agends.md)
